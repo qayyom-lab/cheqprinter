@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 # Keep the downloadable app files out of search results (they are still downloadable from the page)
-Disallow: /cheqprinter/downloads/
+Disallow: /downloads/
 
-Sitemap: https://qayyom-lab.github.io/cheqprinter/sitemap.xml
+Sitemap: https://www.cheqprinter.com/sitemap.xml
