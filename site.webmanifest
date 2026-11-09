@@ -1,0 +1,13 @@
+{
+  "name": "CheQPrinter",
+  "short_name": "CheQPrinter",
+  "description": "Free cheque printing software with a built-in calibrator.",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#fffdf8",
+  "theme_color": "#0f5a6b",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
