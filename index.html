@@ -52,7 +52,8 @@
     { "@type": "Question", "name": "Does it work with my bank's cheque?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calibrator lets you measure your own cheque and position every printed field exactly where it belongs, so it works with any bank's cheque. Built-in layouts are only starting points." } },
     { "@type": "Question", "name": "Can I use it outside the UAE?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calibrator works with any cheque anywhere. You choose your country and default currency at setup, dozens of currencies are included, you can add a custom currency, and amount in words is written in English or Arabic. You can also type your own words in any language." } },
     { "@type": "Question", "name": "Does it work on Mac or only Windows?", "acceptedAnswer": { "@type": "Answer", "text": "CheQPrinter is a single HTML file that runs in a modern browser such as Chrome or Edge, so it works on Windows, macOS and Linux." } },
-    { "@type": "Question", "name": "Is my cheque data uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account and no cheque data is sent to a server. Records are stored in your browser on your computer." } }
+    { "@type": "Question", "name": "Is my cheque data uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account and no cheque data is sent to a server. Records are stored in your browser on your computer." } },
+    { "@type": "Question", "name": "Does the Plus PIN lock encrypt my data?", "acceptedAnswer": { "@type": "Answer", "text": "No. The optional PIN lock helps prevent casual use of the app interface, but it does not encrypt saved data or backup files. Protect access to your computer and keep backups secure." } }
   ]
 }
 </script>
@@ -282,7 +283,7 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
             <img src="assets/print-issue.jpg" alt="Cheque Print and Issue screen: choose a bank template, preview the cheque, set the crossing instruction and print">
           </figure>
           <figure class="slide" data-cap="Cheque Register: Browse records by date, with monthly totals shown per currency.">
-            <img src="assets/cheque-register.png?rev=5" alt="Printer paper feeder and hardware alignment screen with A4 preview and fine-tune offsets">
+            <img src="assets/cheque-register.png?rev=5" alt="CheQPrinter Plus cheque register showing monthly totals by currency and date">
           </figure>
           <figure class="slide" data-cap="Plus dashboard: PDC maturity forecast and cash-flow, per currency. Plus only.">
             <img src="assets/dashboard.png?rev=5" alt="CheQPrinter Plus dashboard showing outstanding cheques, past due amounts, cash needed by month and maturity buckets">
@@ -392,8 +393,12 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
           <li>Cheque register, logs and activity history</li>
           <li>Batch cheques and installment schedules</li>
           <li>PDC maturity and cash-flow dashboard</li>
-          <li>Cheque books and leaf tracking</li>
+          <li>Cheque book and leaf tracking, including unaccounted, voided and spoilt leaves</li>
+          <li>Post-print confirmation and spoilt-leaf logging</li>
+          <li>Invoice payment ledger and per-cheque transaction history</li>
           <li>Payment vouchers, remittance advice, Excel / CSV import and PDF reports</li>
+          <li>Signature or company-seal stamp, transaction and voucher remarks</li>
+          <li>Optional PIN lock, auto-lock and recovery code</li>
         </ul>
         <a class="btn btn-ghost" href="downloads/cheqprinter_Plus_v6.7.html" download>Download Plus &darr;</a>
         <p class="meta">Single HTML file &middot; v6.7</p>
@@ -418,9 +423,13 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
           <tr><td>Cheque register, logs and activity history</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Batch cheques and installment schedules</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
           <tr><td>PDC maturity and cash-flow dashboard</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
-          <tr><td>Cheque book and leaf tracking</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Cheque book and leaf tracking, including unaccounted, voided and spoilt leaves</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Post-print confirmation and spoilt-leaf logging</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Invoice payment ledger and per-cheque transaction history</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Payment vouchers and remittance advice</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Excel / CSV import and PDF reports</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Signature or company-seal stamp and transaction / voucher remarks</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Optional PIN lock, auto-lock and recovery code</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
         </tbody>
       </table>
     </div>
@@ -480,12 +489,13 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
   <div class="wrap two">
     <div>
       <h2>Your data stays on your computer</h2>
-      <p>There is no account and no cloud. Templates, beneficiaries and history are stored inside your browser on this computer. That keeps your information private, and it also means <b>you</b> are responsible for backing it up.</p>
+      <p>There is no account and no cloud. Templates, beneficiaries and history are stored inside your browser on this computer; cheque data is not uploaded. Plus offers an optional PIN lock and auto-lock to help prevent casual access. The PIN does not encrypt saved data or backup files, so protect access to your computer and backups. You are responsible for keeping regular backups.</p>
       <ul class="checks">
         <li>Use the same browser and open the same file location each time</li>
         <li>Clearing browser data erases your cheque data</li>
         <li>Download a backup file regularly and keep a copy off this PC</li>
         <li>Backups made in Lite can be restored in Plus</li>
+        <li>The Plus PIN lock does not encrypt saved data or backup files</li>
       </ul>
     </div>
     <div class="callout">
@@ -511,10 +521,11 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     <details><summary>Can I use it outside the UAE?</summary><div class="ans">Yes. The calibrator works with any cheque, anywhere. At first start you choose your country and default currency. AED, SAR, USD, EUR, GBP, PKR and INR are pinned at the top, dozens more are included, and decimals follow the currency. Can't find yours? Add a custom currency with your own symbol or code. Amount in words is written in English or Arabic, and you can always type your own words in any language using Edit Words.</div></details>
     <details><summary>Does it work on Mac, or only Windows?</summary><div class="ans">It is a single HTML file that runs in a modern browser, so it works on Windows, macOS and Linux. Chrome or Edge are recommended for printing.</div></details>
     <details><summary>Is my cheque data uploaded anywhere?</summary><div class="ans">No. There is no account and cheque data is not sent to any server. Everything is stored in your browser on your computer, which is why regular backups matter.</div></details>
+    <details><summary>Does the Plus PIN lock encrypt my data?</summary><div class="ans">No. The optional PIN lock helps prevent casual use of the app interface, but it does not encrypt saved data or backup files. Protect access to your computer and keep backups secure.</div></details>
     <details><summary>Do I need an internet connection?</summary><div class="ans">CheQPrinter is an offline-first app: no account, no cloud, and your cheque data is never sent anywhere. Right now the page styling and icons are fetched from the internet when the file opens, so do the first open (and any update) while online. A fully self-contained build is on our list.<!-- If Lite/Plus are verified to work with the internet disconnected, replace the second sentence with: "It works fully offline once downloaded." --></div></details>
     <details><summary>Which printers work?</summary><div class="ans">CheQPrinter is made for ordinary A4 desktop printers (inkjet or laser). A cheque is a small, stiff leaf, so use the manual or bypass slot if your printer has one, and always test on plain paper first. <b>Large photocopiers and A3 machines are not recommended:</b> in our own test, a cheque got stuck in the rollers of a big copier. Results depend on your printer's paper feed, which is exactly what the alignment tools are for.</div></details>
     <details><summary>Will my bank accept a printed cheque?</summary><div class="ans">Banks set their own rules on printed cheques, ink and layout. Check with your bank, and test on plain paper before using a real leaf.</div></details>
-    <details><summary>What is the difference between Lite and Plus?</summary><div class="ans">Lite prints cheques. Plus adds multiple companies and bank accounts, a cheque register, batch cheques, installment schedules, a PDC dashboard, cheque book tracking, vouchers and remittance advice.</div></details>
+    <details><summary>What is the difference between Lite and Plus?</summary><div class="ans">Lite provides cheque writing, printing, calibration, beneficiary management and backup / restore. Plus adds multiple companies and bank accounts, a full register and activity history, batch and installment schedules, a PDC maturity dashboard, cheque book and leaf controls, voucher and invoice tracking, print confirmations, signature or seal stamps, and optional PIN lock with auto-lock.</div></details>
   </div>
 </section>
 
