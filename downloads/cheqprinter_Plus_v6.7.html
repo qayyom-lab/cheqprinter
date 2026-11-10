@@ -619,7 +619,7 @@ html.dark svg.lucide[data-hue="slate"]{color:#cbd5e1!important}html.dark svg.luc
         </button>
         <button onclick="switchTab('books')" id="nav-books" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-xs font-medium text-slate-400 hover:bg-slate-800/60" aria-current="false">
           <i data-lucide="book-marked" class="w-4 h-4"></i>
-          <span>Cheque Books &amp; Leaves</span><span id="badge-books" class="hidden"></span>
+          <span>Cheque Books</span><span id="badge-books" class="hidden"></span>
         </button>
         <button onclick="switchTab('beneficiaries')" id="nav-beneficiaries" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-xs font-medium text-slate-400 hover:bg-slate-800/60" aria-current="false">
           <i data-lucide="users" class="w-4 h-4"></i>
@@ -632,7 +632,7 @@ html.dark svg.lucide[data-hue="slate"]{color:#cbd5e1!important}html.dark svg.luc
       </nav>
 
       <!-- PRINTER TRAY CONFIG SUMMARY -->
-      <div class="p-3 border-t border-slate-800 bg-slate-950/60 text-[10px] text-slate-400" id="systemStatusPanel"><h3 class="font-mono uppercase font-semibold text-xs mb-2">System Status</h3><div class="system-row"><span>Version</span><strong>Plus v6.7</strong></div><div class="system-row"><span>Data saving</span><strong id="sidebarDataSaving" role="status">Changes saved</strong></div><button class="system-row status-link" onclick="openBackupSettings()" title="Open Backup &amp; Restore"><span>Last backup</span><span id="sidebarBackupStatus">Never</span></button><button class="system-row status-link" onclick="openBackupSettings()" title="Optional recovery copies; saved records are stored separately"><span>Folder backup</span><span id="sidebarAutoBackup">Off</span></button><div id="systemStatusMessage" role="status" class="system-message"></div></div>
+      <div class="p-3 border-t border-slate-800 bg-slate-950/60 text-[10px] text-slate-400" id="systemStatusPanel"><h3 class="font-mono uppercase font-semibold text-xs mb-2">System Status</h3><div class="system-row"><span>Version</span><strong>Plus v6.7</strong></div><div class="system-row"><span>Data saving</span><strong id="sidebarDataSaving" role="status">Changes saved</strong></div><button class="system-row status-link" onclick="openBackupSettings()" title="Open Backup &amp; Restore"><span>Last backup</span><span id="sidebarBackupStatus">Never</span></button><button class="system-row status-link" onclick="openBackupSettings('folder')" title="Optional recovery copies; saved records are stored separately"><span>Folder backup</span><span id="sidebarAutoBackup">Off</span></button><div id="systemStatusMessage" role="status" class="system-message"></div></div>
     </aside>
 
     <!-- CONTENT CANVAS -->
@@ -1143,8 +1143,8 @@ html.dark svg.lucide[data-hue="slate"]{color:#cbd5e1!important}html.dark svg.luc
       <!-- ========================================== -->
       <section id="tab-books" class="tab-content hidden space-y-5">
         <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-sm">
-          <h2 class="text-base font-bold text-white flex items-center gap-2"><i data-lucide="book-marked" class="w-4 h-4 text-emerald-400"></i> Cheque Books &amp; Leaf Control</h2>
-          <p class="text-xs text-slate-400">Register each book you receive. cheqprinter numbers cheques per bank account from these books, warns when stock is low, and lists any leaf that is not accounted for.</p>
+          <h2 class="text-base font-bold text-white flex items-center gap-2"><i data-lucide="book-marked" class="w-4 h-4 text-emerald-400"></i> Cheque Books</h2>
+          <p class="text-xs text-slate-400">Register the books you receive, track leaves, and get low-stock alerts.</p>
         </div>
         <div id="bk_addBox" class="bg-slate-900 p-4 rounded-xl border border-slate-800 grid grid-cols-2 md:grid-cols-8 gap-3 items-end text-xs">
           <div class="col-span-2"><label class="block text-slate-400 mb-1">Company</label><select id="bk_entity" onchange="cp8BkForm()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white"></select></div><div class="col-span-2"><label class="block text-slate-400 mb-1">Bank account</label><select id="bk_account" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white"></select></div>
@@ -1383,27 +1383,24 @@ html.dark svg.lucide[data-hue="slate"]{color:#cbd5e1!important}html.dark svg.luc
         <button onclick="closeTemplatesModal()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
       <div class="space-y-4 text-xs">
+        <div class="cp10-tpl">
         <div class="space-y-2">
           <span class="font-mono uppercase text-[10px] text-sky-400 font-bold block">Export</span>
           <label class="flex items-center space-x-2 text-slate-300 cursor-pointer"><input type="radio" name="tplExportScope" value="one" checked=""><span>This template only: <b id="tplExpName" class="text-sky-300"></b></span></label>
           <label class="flex items-center space-x-2 text-slate-300 cursor-pointer"><input type="radio" name="tplExportScope" value="mine"><span>My custom templates only</span></label>
           <label class="flex items-center space-x-2 text-slate-300 cursor-pointer"><input type="radio" name="tplExportScope" value="all"><span>All templates (full pack to share with colleagues)</span></label>
           <label class="flex items-center space-x-2 text-slate-300 cursor-pointer"><input type="checkbox" id="tpl_includeScans" checked="" class="rounded bg-slate-900 border-slate-700"><span>Include scanned cheque images</span></label>
-          <button onclick="exportTemplates()" class="w-full py-2 bg-sky-600 hover:bg-sky-500 rounded-xl font-semibold text-white flex items-center justify-center gap-2" data-intent="primary"><i data-lucide="download" class="w-4 h-4"></i> Export Templates</button>
+          <button onclick="exportTemplates()" class="px-6 py-2 bg-sky-600 hover:bg-sky-500 rounded-xl font-semibold text-white inline-flex items-center justify-center gap-2" data-intent="primary"><i data-lucide="download" class="w-4 h-4"></i> Export Templates</button>
         </div>
-
-        <div class="space-y-2 pt-3 border-t border-slate-800">
+        <div class="space-y-2">
           <span class="font-mono uppercase text-[10px] text-sky-400 font-bold block">Import</span>
-          <input type="file" id="tplImportInput" accept=".json,application/json" onchange="importTemplatesFile(event)" class="w-full text-xs text-slate-400 bg-slate-950 p-2 rounded-lg border border-slate-800">
+          <input type="file" id="tplImportInput" accept=".json,application/json" onchange="cp10PickTpl(event)" class="w-full text-xs text-slate-400 bg-slate-950 p-2 rounded-lg border border-slate-800">
           <label class="flex items-center space-x-2 text-slate-300 cursor-pointer"><input type="checkbox" id="tpl_overwrite" class="rounded bg-slate-900 border-slate-700"><span>Overwrite templates that have the same ID (otherwise a changed one is added as a copy)</span></label>
+          <button id="cp10ImportBtn" onclick="cp10RunTplImport()" disabled class="px-6 py-2 bg-sky-600 hover:bg-sky-500 disabled:opacity-40 rounded-xl font-semibold text-white inline-flex items-center justify-center gap-2" data-intent="primary"><i data-lucide="upload" class="w-4 h-4"></i> Import Templates</button>
           <div id="tpl_importResult" class="text-[11px] text-slate-300"></div>
         </div>
-
-        <div class="space-y-2 pt-3 border-t border-slate-800">
-          <span class="font-mono uppercase text-[10px] text-sky-400 font-bold block">UAE bank templates</span>
-          <button onclick="restoreMissingBankTemplates()" class="w-full py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl font-medium text-slate-200">Restore any missing preloaded bank templates</button>
-          <p class="text-[10px] text-slate-500">Adds back templates that are not in the list. Templates you have already calibrated are never overwritten.</p>
         </div>
+        <div class="pt-2"><button type="button" class="cp10-link" onclick="restoreMissingBankTemplates()" title="Adds back any preloaded bank templates that are not in your list. Templates you have calibrated are never changed.">Restore templates</button></div>
       </div>
     </div>
   </div>
@@ -3235,7 +3232,7 @@ const amountCleanupV8=cleanupStoredMoney(LS,'Plus');
       else list = presets.slice();
       if (!list.length || !list[0]) { showToast('No custom templates to export.', 'error'); return; }
       const payload = {
-        app: 'cheqprinter', type: 'cheqone-templates', version: 1, exportedAt: new Date().toISOString(),
+        app: 'cheqprinter', type: 'cheqone-templates', version: 1, exportedAt: new Date().toISOString(), pack: { name: scope === 'all' ? 'Full template pack' : scope === 'mine' ? 'Custom templates' : list[0].name, count: list.length },
         templates: list.map(x => { const c = cloneJSON(x); if (!withScans) { c.scannedBg = null; } return c; })
       };
       const fname = scope === 'one' ? `cheqprinter_Template_${slugify(list[0].name)}.json` : `cheqprinter_Templates_${scope === 'all' ? 'FullPack' : 'Custom'}_${todayStamp()}.json`;
@@ -3290,7 +3287,7 @@ const amountCleanupV8=cleanupStoredMoney(LS,'Plus');
     function restoreMissingBankTemplates() {
       const have = new Set(presets.map(x => x.id));
       const missing = BUILTIN_PRESETS.filter(b => !have.has(b.id));
-      if (!missing.length) { showToast('All preloaded bank templates are already present.', 'info'); return; }
+      if (!missing.length) { showToast('Nothing to restore. All preloaded bank templates are already in your list.', 'info'); return; }
       const next = presets.concat(missing.map(cloneJSON));
       if (!safeSet('cheq62_presets', next)) return;
       presets = next;
@@ -5189,13 +5186,13 @@ const amountCleanupV8=cleanupStoredMoney(LS,'Plus');
     }
     /* Full serial-range inventory: drafts are reservations, not issued leaves. */
     function bookLeaves(book) {
-      if(!book||!Number.isSafeInteger(book.from)||!Number.isSafeInteger(book.to)||book.to<book.from||book.to-book.from>999)return [];const acc=accounts.find(a=>a.id===book.accountId),records=register.filter(r=>recInAccount(r,acc)),drafts=chequeDrafts.filter(d=>d.accountId===book.accountId),maxUsed=Math.max(0,...records.map(r=>numVal(r.chequeNo)||0)),result=[];
+      if(!book||!Number.isSafeInteger(book.from)||!Number.isSafeInteger(book.to)||book.to<book.from||book.to-book.from>999)return [];const acc=accounts.find(a=>a.id===book.accountId),records=register.filter(r=>recInAccount(r,acc)),drafts=chequeDrafts.filter(d=>d.accountId===book.accountId),maxUsed=Math.max(0,...records.map(r=>numVal(r.chequeNo)||0).filter(x=>x>=book.from&&x<=book.to)),result=[];
       const rm=new Map(records.map(r=>[numVal(r.chequeNo),r])),dm=new Map(drafts.map(r=>[numVal(r.chequeNo),r]));for(let n=book.from;n<=book.to;n++){const record=rm.get(n),draft=dm.get(n);result.push({number:n,serial:padNo(n,book.pad),record,draft:record?null:draft,status:record?record.status:draft?'Draft':'Unused',unaccounted:!record&&!draft&&n<maxUsed});}return result;
     }
     function bookHasActivity(b) { return !!b.hasLeafActivity||asArr(b.leafNumbers).length>0||bookLeaves(b).some(l=>l.record||l.draft); }
     function renderBooks() {
       renderBooksBase();rememberBookActivity();const show=elc('booksShowArchived'),list=books.filter(b=>accounts.some(a=>a.id===b.accountId)&&(!b.archived||show));
-      setHtml('bk_body',list.map(b=>{const a=accounts.find(a=>a.id===b.accountId),stats=bookStats(b);return '<tr><td class="p-3"><button class="figure-link" onclick="openBookDetails(\''+b.id+'\')">'+esc(b.label||'Cheque book')+'</button><div class="text-xs text-slate-400">'+esc(cp8AccLabel(a,true))+'</div></td><td class="p-3"><button class="figure-link" onclick="openBookDetails(\''+b.id+'\')">'+padNo(b.from,b.pad)+' – '+padNo(b.to,b.pad)+'</button></td><td class="p-3 text-xs">'+stats.used+' recorded · '+stats.draft+' drafts · '+stats.available+' unused of '+stats.total+'</td><td class="p-3 text-xs">'+(b.archived?'Archived':stats.available===0?'No unused leaves':stats.available<=(settings.lowLeaves||0)?'Low stock':'In use')+(stats.gaps.length?'<div class="text-amber-400">'+stats.gaps.length+' unaccounted</div>':'')+'</td><td class="p-3"><button class="app-button" onclick="openBookDetails(\''+b.id+'\')">View Book</button></td></tr>';}).join('')||'<tr><td colspan="5" class="p-4 text-xs">No '+(show?'':'active ')+'cheque books. Add a book or enable Show archived books.</td></tr>');
+      setHtml('bk_body',list.map(b=>{const a=accounts.find(a=>a.id===b.accountId),stats=bookStats(b);return '<tr><td class="p-3"><button class="figure-link" onclick="openBookDetails(\''+b.id+'\')">'+esc(b.label||'Cheque book')+'</button><div class="text-xs text-slate-400">'+esc(cp8AccLabel(a,true))+'</div></td><td class="p-3"><button class="figure-link" onclick="openBookDetails(\''+b.id+'\')">'+padNo(b.from,b.pad)+' – '+padNo(b.to,b.pad)+'</button></td><td class="p-3 text-xs">'+stats.used+' recorded · '+stats.draft+' drafts · '+stats.available+' unused of '+stats.total+'</td><td class="p-3 text-xs">'+(b.archived?'Archived':stats.available===0?'<span style="color:#dc2626;font-weight:700">No unused leaves</span>':stats.available<=(settings.lowLeaves||0)?'<span style="color:#dc2626;font-weight:700">Low stock</span>':'In use')+(stats.gaps.length?'<div class="text-amber-400">'+stats.gaps.length+' unaccounted</div>':'')+'</td><td class="p-3"><button class="app-button" onclick="openBookDetails(\''+b.id+'\')">View Book</button></td></tr>';}).join('')||'<tr><td colspan="5" class="p-4 text-xs">No '+(show?'':'active ')+'cheque books. Add a book or enable Show archived books.</td></tr>');
       const gaps=list.filter(b=>!b.archived).flatMap(b=>bookLeaves(b).filter(l=>l.unaccounted).map(l=>({b,l})));setHtml('bk_gaps',gaps.length?gaps.slice(0,100).map(({b,l})=>'<button class="app-button" onclick="openLeafDetails(\''+b.id+'\','+l.number+')">'+l.serial+'</button>').join(''):'<p class="text-xs">Every leaf below the highest number used is recorded or reserved by a draft.</p>');renderSystemStatus();
     }
     function openBookDetails(id,reset=true) { if(!needPerm())return;const b=books.find(b=>b.id===id);if(!b)return;activeBookId=id;const a=accounts.find(a=>a.id===b.accountId),e=ENTITIES.find(e=>e.id===a?.entityId),st=bookStats(b);setText('modalBookDetailsTitle',(b.label||'Cheque book')+(b.archived?' — Archived':''));setText('bookDetailsAccount',(e?.name||'')+' · '+(a?.bankName||'Unknown bank')+' ('+(a?.accNo||'')+') · '+padNo(b.from,b.pad)+' – '+padNo(b.to,b.pad));setHtml('bookDetailsSummary','<strong>'+st.total+' leaves</strong>'+Object.entries(st.counts).map(([status,n])=>'<button class="summary-count" onclick="document.getElementById(\'bookLeafStatus\').value=\''+status+'\';renderBookLeaves()">'+status+': '+n+'</button>').join(''));setText('archiveBookButton',b.archived?'Restore Book':'Archive Book');if(reset){document.getElementById('bookLeafSearch').value='';document.getElementById('bookLeafStatus').value='ALL';}renderBookLeaves();showModal('modalBookDetails');try{lucide.createIcons();}catch(e){} }
@@ -5516,8 +5513,8 @@ const cpCountryStockHeader=document.getElementById('previewBankHeader')?.textCon
 (function(){const s=cpEl('style');s.textContent='.cp-needs-calibration{display:inline-block;margin:3px 5px;padding:2px 6px;border:1px solid #d97706;border-radius:4px;color:#b45309;font-size:10px}';document.head.append(s);})();
 
 /* Stage B: a full-screen Settings workspace hosting the existing controls and handlers. */
-const CP_SETTINGS_SECTIONS=[['setup','Setup Guide'],['companies','Companies'],['banks','Bank accounts & templates'],['books','Cheque books'],['currencies','Currencies'],['data','Your data'],['general','General'],['printing','Printing & calibration'],['backup','Backup & restore'],['imported','Imported from Lite'],['security','PIN lock'],['system','Storage, reset & about']];
-const CP_SETTINGS_GROUPS={setup:'Getting started',companies:'Your business',books:'Cheques & currency',data:'Your data'};
+const CP_SETTINGS_SECTIONS=[['setup','Setup Guide'],['companies','Companies'],['banks','Bank accounts & templates'],['books','Cheque books'],['currencies','Currency list'],['data','Your data'],['general','General'],['printing','Printing & calibration'],['backup','Backup & restore'],['imported','Imported from Lite'],['security','PIN lock'],['system','Storage, reset & about']];
+const CP_SETTINGS_GROUPS={setup:'Getting started',companies:'Your business',currencies:'Tools',data:'Your data'};
 const CP_SETTINGS_HINTS={data:'Backup, restore, automatic folder copies, imported Lite cheques, storage and reset - all in one place.',setup:'Five short steps to your first printed cheque. Finished steps are ticked automatically.',companies:'The companies that issue cheques.',banks:'Bank accounts and the cheque template used for each.',books:'Cheque books you hold, and when to be warned that one is running low.',general:'What new cheques start with. You can still change these on every cheque.',currencies:'Built-in currencies, plus your own.',printing:'Calibrate the printed text to your real cheque and print a test sheet.',backup:'Save a copy of your data, restore one, or let the app save backups to a folder automatically.',imported:'Cheques from Lite backups. Read-only.',security:'Optional PIN to stop casual use of the screen.',system:'Storage used, clearing data, and about this app.'};
 const cpSettingsState={built:false,building:false,current:null,baselines:new Map(),mounts:new Map(),writeRevision:0,previousTab:'dashboard',previousMode:'issue',currenciesReady:false};
 const cpSettingsOriginal={open:openSettingsModal,backup:openBackupRestoreModal,currencies:cpOpenCurrencies,imported:cpOpenImportedLite,entities:openManageEntitiesModal,accounts:openManageAccountsModal,templates:openTemplatesModal,printer:openFeederSettingsModal,reset:openResetModal,credits:showCredits};
@@ -5686,10 +5683,10 @@ function cp8AfterBook(){
 function cp8BarFill(bar){
   if(currentEntity._none||currentAccount._none){bar.hidden=true;return;}bar.hidden=false;
   const ves=visibleEntities(),accs=accounts.filter(a=>a.entityId===currentEntity.id),bks=accountBooks(currentAccount),ctx=bar.dataset.ctx;
-  const pick=(lvl,opts,val,label)=>opts.length>1?`<label><span>${label}</span><select data-lvl="${lvl}" class="bg-slate-950 border border-slate-700 text-white">${opts.map(o=>`<option value="${esc(o[0])}"${o[0]===val?' selected':''}>${esc(o[1])}</option>`).join('')}</select></label>`:`<div class="cp8-chip"><span>${label}</span><b>${esc(opts[0]?opts[0][1]:'-')}</b></div>`;
+  const pick=(lvl,opts,val,label)=>opts.length>=1?`<label><span>${label}</span><select data-lvl="${lvl}" class="bg-slate-950 border border-slate-700 text-white">${opts.map(o=>`<option value="${esc(o[0])}"${o[0]===val?' selected':''}>${esc(o[1])}</option>`).join('')}</select></label>`:`<div class="cp8-chip"><span>${label}</span><b>${esc(opts[0]?opts[0][1]:'-')}</b></div>`;
   let h=pick('entity',ves.map(e=>[e.id,e.name]),currentEntity.id,'Company')+pick('account',accs.map(a=>[a.id,a.bankName+' ('+a.accNo+')']),currentAccount.id,'Bank account');
   if(!bks.length)h+='<div class="cp8-chip"><span>Cheque book</span><b>none registered</b></div>';
-  else if(bks.length===1)h+=`<div class="cp8-chip"><span>Cheque book</span><b>${esc(bks[0].label||'Book')} · ${bookStats(bks[0]).available} left</b></div>`;
+  else if(bks.length===1)h+=pick('book',[['',(bks[0].label||'Book')+' · '+padNo(bks[0].from,bks[0].pad)+'-'+padNo(bks[0].to,bks[0].pad)+' · '+bookStats(bks[0]).available+' left']],'','Cheque book');
   else h+=pick('book',[['','Any book - next free leaf']].concat(bks.map(b=>[b.id,(b.label||'Book')+' · '+padNo(b.from,b.pad)+'-'+padNo(b.to,b.pad)+' · '+bookStats(b).available+' left'])),bks.some(b=>b.id===CP_ISSUE.bookId)?CP_ISSUE.bookId:'','Cheque book');
   const info=nextFreeNumbers(currentAccount,1);let note='';
   if(ctx==='pdc')note='Type the first cheque number below. The calculator does not pick a leaf automatically.';
@@ -5728,7 +5725,7 @@ function cp8OpenLockDialog(){
   if(!needPerm())return;
   let m=document.getElementById('cp8Lock');if(!m){m=document.createElement('div');m.id='cp8Lock';m.className='no-print hidden fixed inset-0 bg-slate-950/80 flex items-center justify-center p-4';m.style.zIndex='110';document.body.append(m);m.addEventListener('click',e=>{if(e.target===m)hideModal('cp8Lock');});}
   const on=securityOn(),inp='w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white mt-1',btn='px-3 py-2 rounded-lg border border-slate-600 bg-slate-800 text-white text-xs font-semibold';
-  m.innerHTML='<div class="app-panel w-full max-w-sm p-5" style="max-height:90vh;overflow:auto"><div class="flex justify-between items-center mb-2"><h3 class="font-bold text-base">PIN lock</h3><button class="dialog-x" aria-label="Close" onclick="hideModal(\'cp8Lock\')">×</button></div>'
+  m.innerHTML='<div class="app-panel w-full max-w-sm p-5" style="max-height:90vh;overflow:auto;position:relative"><div class="flex justify-between items-center mb-2"><h3 class="font-bold text-base">PIN lock</h3><button class="dialog-x" aria-label="Close" onclick="hideModal(\'cp8Lock\')">×</button></div>'
    +'<p class="text-xs text-slate-400 mb-3">'+(on?'PIN lock is on. Lock the screen now, or change the PIN.':'PIN lock is off. Set a PIN to stop casual use of this screen. A recovery code is shown once after you set it.')+'</p>'
    +(on?'<button class="'+btn+' w-full mb-3" style="background:#0f766e" onclick="hideModal(\'cp8Lock\');lockApp()">Lock now</button>':'')
    +'<label class="block text-xs mb-2">'+(on?'New PIN':'PIN')+' (4+ characters)<input id="cp8_pin" type="password" autocomplete="new-password" class="'+inp+'"></label><label class="block text-xs mb-3">Repeat PIN<input id="cp8_pin2" type="password" autocomplete="new-password" class="'+inp+'"></label>'
@@ -5740,7 +5737,7 @@ function cp8SetPin(){const p=elv('cp8_pin'),p2=elv('cp8_pin2');if(p.length<4||p!
 function cp8RemovePin(){if(!confirm('Turn off the PIN lock?'))return;hideModal('cp8Lock');disablePinLock();showToast('PIN lock turned off.','info');}
 function cp8SaveAuto(){renderSettings();document.getElementById('st_lock').value=elv('cp8_auto');saveDefaultsFromSettings();}
 /* Settings: button menu, one Your-data page, no duplicated options */
-const CP8_HIDDEN=['general','printing','backup','imported','security','system'];
+const CP8_HIDDEN=['books','general','printing','backup','imported','security','system'];
 const cp8NavBase=cpSettingsNavigate;
 cpSettingsNavigate=function(key,options){
   if(key==='security'){cp8OpenLockDialog();return true;}
@@ -5773,6 +5770,89 @@ window.__cheqInit=function(){
   CP_SETTINGS_GROUPS.setup='Getting started';
   updateUserChip();
 };
+
+/* ===================== v9 ===================== */
+function cp9Low(){const el=document.getElementById('cp9Low');if(el&&document.activeElement!==el)el.value=Number.isFinite(Number(settings.lowLeaves))?settings.lowLeaves:10;}
+function cp9SaveLow(){
+  if(!needPerm())return;const el=document.getElementById('cp9Low'),v=Number(el.value);
+  if(!Number.isInteger(v)||v<0||v>10000){showToast('Enter a whole number from 0 to 10000.','error');cp9Low();return;}
+  const next={...settings,lowLeaves:v};delete next.vatRate;if(!safeSet('cheq62_settings',stamp(next)))return;settings=next;markDirty();refreshAllViews();showToast('Low-stock alert set to '+v+' leaves.','success');
+}
+const cp9RenderBooksBase=renderBooks;renderBooks=function(){cp9RenderBooksBase.apply(this,arguments);cp9Low();};
+/* bank account default currency, editable per account */
+const cp9AccListBase=renderManagedAccountsList;
+renderManagedAccountsList=function(){
+  cp9AccListBase.apply(this,arguments);
+  const c=document.getElementById('managedAccountsList');if(!c||currentEntity._none)return;
+  const linked=accounts.filter(a=>a.entityId===currentEntity.id),rows=[...c.children].filter(r=>r.querySelector&&r.querySelector('button'));
+  const codes=Object.keys(CURRENCIES);
+  rows.forEach((row,i)=>{const a=linked[i];if(!a||row.querySelector('.cp9-cur'))return;
+    const w=document.createElement('label');w.className='cp9-cur text-[10px] text-slate-400 flex items-center gap-1 mr-2';
+    w.innerHTML='Currency <select class="bg-slate-950 border border-slate-700 text-white rounded px-1 py-0.5 text-[11px]"><option value="">Company default ('+esc(currentEntity.defaultCurrency||'AED')+')</option>'+codes.map(k=>'<option value="'+esc(k)+'"'+(a.defaultCurrency===k?' selected':'')+'>'+esc(k)+'</option>').join('')+'</select>';
+    w.querySelector('select').onchange=function(){const v=this.value;accounts=accounts.map(x=>x.id===a.id?stamp({...x,defaultCurrency:v}):x);saveAccounts();markDirty();showToast('Account currency saved.','success');};
+    row.insertBefore(w,row.lastElementChild);});
+};
+/* open Settings on the folder-backup block and highlight it */
+openBackupSettings=function(where){
+  if(!needPerm())return;cpSettingsNavigate('data');
+  setTimeout(()=>{
+    const sec=document.getElementById('settingsBackupRestore'),target=where==='folder'?(document.querySelector('#st_abBtns button')||sec):document.querySelector('#cpSettings-backup .app-panel');
+    if(target&&target.scrollIntoView)target.scrollIntoView({block:'center',behavior:'smooth'});
+    if(where==='folder'&&sec){sec.classList.add('cp9-flash');if(target&&target!==sec)target.classList.add('cp9-flash-btn');setTimeout(()=>{sec.classList.remove('cp9-flash');if(target)target.classList.remove('cp9-flash-btn');},3500);}
+  },160);
+  return true;
+};
+const cp9NavBase=cpSettingsNavigate;
+cpSettingsNavigate=function(key,options){if(key==='books'){try{cpCloseSettingsPage(true);}catch(e){}switchTab('books');return true;}return cp9NavBase.call(this,key,options);};
+const cp9Init=window.__cheqInit;
+window.__cheqInit=function(){
+  cp9Init();
+  const box=document.getElementById('bk_addBox');
+  if(box&&!document.getElementById('cp9LowBox')){const d=document.createElement('div');d.id='cp9LowBox';d.className='flex items-center gap-2 text-xs text-slate-400 mt-3';d.innerHTML='<span>Low-stock alert: warn when a book has</span><input id="cp9Low" type="number" min="0" max="10000" step="1" class="w-20 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-white font-mono" onchange="cp9SaveLow()"><span>leaves or fewer (applies to all books)</span>';box.after(d);}
+  document.querySelectorAll('.cp-settings-menu button[data-settings-section="books"]').forEach(b=>b.style.display='none');
+  document.querySelectorAll('#cpSettingsMobileMenu option').forEach(o=>{if(o.value==='books')o.remove();});
+  const st=document.createElement('style');st.textContent='.cp9-flash{outline:3px solid #0f766e;outline-offset:6px;border-radius:10px;animation:cp9p 1.1s ease-in-out 3}.cp9-flash-btn{outline:3px solid #0f172a;outline-offset:3px;box-shadow:0 0 0 6px rgba(15,118,110,.35)}@keyframes cp9p{50%{outline-color:#fbbf24}}';document.head.append(st);
+  cp9Low();
+};
+
+/* ===================== v10 ===================== */
+let cp10TplFile=null;
+function cp10PickTpl(ev){
+  const f=ev.target.files&&ev.target.files[0],out=document.getElementById('tpl_importResult'),btn=document.getElementById('cp10ImportBtn');
+  cp10TplFile=f||null;if(btn)btn.disabled=!f;if(!f){out.textContent='';return;}
+  const r=new FileReader();r.onload=e=>{try{const d=JSON.parse(e.target.result);const list=Array.isArray(d)?d:(d&&Array.isArray(d.templates)?d.templates:(d&&d.fields?[d]:[]));const nm=d&&d.pack&&d.pack.name?d.pack.name+' - ':'';out.textContent=list.length?nm+list.length+' template'+(list.length===1?'':'s')+' found in '+f.name+'. Click Import Templates to add them.':'No templates found in this file.';if(!list.length&&btn)btn.disabled=true;}catch(x){out.textContent='This file is not valid JSON.';if(btn)btn.disabled=true;}};r.readAsText(f);
+}
+function cp10RunTplImport(){if(!cp10TplFile)return;const f=cp10TplFile;importTemplatesFile({target:{files:[f]}});cp10TplFile=null;const inp=document.getElementById('tplImportInput');if(inp)inp.value='';const b=document.getElementById('cp10ImportBtn');if(b)b.disabled=true;}
+/* Unsaved-changes warning only after a real user edit */
+document.addEventListener('input',cp10Touch,true);document.addEventListener('change',cp10Touch,true);
+function cp10Touch(ev){
+  if(!ev.isTrusted||!cpSettingsState)return;if(!cpSettingsState.touched)cpSettingsState.touched=new Set();
+  for(let n=ev.target;n&&n.nodeType===1;n=n.parentElement){const m=/^cpSettings-(.+)$/.exec(n.id||'');if(m)cpSettingsState.touched.add(m[1]);}
+}
+const cp10DirtyBase=cpSettingsDirty;
+cpSettingsDirty=function(key){const t=cpSettingsState.touched;if(key==='printing')return cp10DirtyBase(key);return !!(t&&t.has(key))&&cp10DirtyBase(key);};
+const cp10RememberBase=cpSettingsRemember;
+cpSettingsRemember=function(key){const k=key===undefined?cpSettingsState.current:key;if(cpSettingsState.touched)cpSettingsState.touched.delete(k);return cp10RememberBase.apply(this,arguments);};
+/* Invoice ledger -> Cheque Register page, with a two-tab switch */
+function cp10Ledger(){
+  const reg=document.getElementById('tab-register'),led=document.getElementById('led_body');if(!reg||!led||document.getElementById('cp10Tabs'))return;
+  const panel=led.closest('.bg-slate-900.rounded-xl');if(!panel)return;
+  const bar=document.createElement('div');bar.id='cp10Tabs';bar.className='flex gap-2 text-xs';
+  bar.innerHTML='<button type="button" data-v="reg" class="app-button primary">Cheque register</button><button type="button" data-v="led" class="app-button">Invoice ledger</button>';
+  reg.prepend(bar);reg.append(panel);panel.id='cp10LedgerPanel';panel.style.display='none';
+  bar.addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;const showLed=b.dataset.v==='led';
+    [...reg.children].forEach(c=>{if(c===bar)return;c.style.display=(c===panel)?(showLed?'':'none'):(showLed?'none':'');});
+    bar.querySelectorAll('button').forEach(x=>x.classList.toggle('primary',x===b));if(showLed)renderInvoiceLedger();});
+}
+const cp10Init=window.__cheqInit;
+window.__cheqInit=function(){
+  cp10Init();cp10Ledger();
+  document.querySelectorAll('.cp-settings-header button').forEach(b=>{if(/Close Settings/.test(b.textContent)){b.style.cssText='font-weight:800;background:#0f766e;color:#fff;border:1px solid #0f766e;padding:8px 16px;border-radius:8px';}});
+  const st=document.createElement('style');st.textContent='.cp-settings-content button.w-full{width:auto!important;padding-left:22px!important;padding-right:22px!important}.cp10-tpl{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}.cp10-tpl>div{border:1px solid var(--cp-border,#334155);border-radius:12px;padding:14px}.cp-settings-page .cp-settings-header button{font-weight:800!important;background:#0f766e!important;color:#fff!important;border:1px solid #0f766e!important;padding:8px 18px!important}.cp-settings-page .cp-settings-header button:hover{background:#115e59!important}.cp-settings-page .cp-settings-header button,.cp-settings-page .cp-settings-header button *{color:#fff!important;-webkit-text-fill-color:#fff!important}.cp-settings-page button.cp10-link{border-radius:0!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#0e7490!important;text-decoration:underline;font-size:11px!important;font-weight:500!important;cursor:pointer;padding:2px 0!important;min-height:0!important}';document.head.append(st);
+};
+
+/* ===================== v11 ===================== */
+(function(){const st=document.createElement('style');st.textContent='#toastContainer{z-index:400!important}#bk_addBox{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;align-items:end}#bk_addBox>div:has(#bk_entity),#bk_addBox>div:has(#bk_account){grid-column:1/-1!important}#bk_addBox>button{grid-column:1/-1!important;justify-self:end;width:auto!important;padding:9px 28px!important}@media(max-width:640px){#bk_addBox{grid-template-columns:1fr!important}#bk_addBox>button{justify-self:stretch;width:100%!important}}';document.head.append(st);})();
 </script>
 <script>
 /* cheqprinter v6.7 storage layer: records live in IndexedDB (no 5 MB limit); the app code is started after they are loaded. */
