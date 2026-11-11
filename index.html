@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-567C92NL"></script>
+<!-- Google Analytics 4 (website visits and download clicks only; the apps themselves send nothing) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W925D2QX6T"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-W925D2QX6T');
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free Cheque Printing Software | Print on Any Bank's Cheque | CheQPrinter</title>
-<meta name="description" content="Free cheque printing software with a built-in calibrator. Measure your own cheque, line it up once, then print, in any currency. Works in your browser and your cheque data stays on your computer. Made in the UAE.">
+<meta name="description" content="Free cheque printing software with a built-in calibrator. Line up your own cheque once, then print in any currency. Works offline; your data stays on your computer. Made in the UAE.">
 <link rel="canonical" href="https://www.cheqprinter.com/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#fffdf8">
@@ -18,8 +20,11 @@
 <meta property="og:url" content="https://www.cheqprinter.com/">
 <meta property="og:title" content="Free Cheque Printing Software | Print on Any Bank's Cheque">
 <meta property="og:description" content="Line up your own cheque once with the built-in calibrator, then print every time. Free. Made in the UAE.">
-<meta property="og:image" content="https://www.cheqprinter.com/assets/cheqprinter-logo.png">
+<meta property="og:image" content="https://www.cheqprinter.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.cheqprinter.com/assets/og-image.png">
 <meta name="twitter:title" content="Free Cheque Printing Software | CheQPrinter">
 <meta name="twitter:description" content="Line up your own cheque once with the built-in calibrator, then print every time. Free. Made in the UAE.">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -40,6 +45,8 @@
   "operatingSystem": "Any modern web browser (Windows, macOS, Linux)",
   "description": "Free cheque printing software with a built-in calibrator, test sheet and printer alignment. Works with any bank's cheque.",
   "url": "https://www.cheqprinter.com/",
+  "isAccessibleForFree": true,
+  "featureList": "Cheque calibrator for any bank, printer alignment profiles, test sheet, amount in words in English and Arabic, any currency, works fully offline, beneficiary list, unlimited print history, backup and restore",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "AED" }
 }
 </script>
@@ -53,6 +60,8 @@
     { "@type": "Question", "name": "Can I use it outside the UAE?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calibrator works with any cheque anywhere. You choose your country and default currency at setup, dozens of currencies are included, you can add a custom currency, and amount in words is written in English or Arabic. You can also type your own words in any language." } },
     { "@type": "Question", "name": "Does it work on Mac or only Windows?", "acceptedAnswer": { "@type": "Answer", "text": "CheQPrinter is a single HTML file that runs in a modern browser such as Chrome or Edge, so it works on Windows, macOS and Linux." } },
     { "@type": "Question", "name": "Is my cheque data uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account and no cheque data is sent to a server. Records are stored in your browser on your computer." } },
+    { "@type": "Question", "name": "Do I need an internet connection?", "acceptedAnswer": { "@type": "Answer", "text": "No. Once you have downloaded the file, Lite and Plus work fully offline. All styling, icons and fonts are inside the file, and your cheque data is never sent anywhere." } },
+    { "@type": "Question", "name": "Can I save settings for more than one printer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Save a separate alignment profile for each printer and switch between them in one click." } },
     { "@type": "Question", "name": "Does the Plus PIN lock encrypt my data?", "acceptedAnswer": { "@type": "Answer", "text": "No. The optional PIN lock helps prevent casual use of the app interface, but it does not encrypt saved data or backup files. Protect access to your computer and keep backups secure." } }
   ]
 }
@@ -94,12 +103,12 @@ section[id]{scroll-margin-top:64px}
 .menubar{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .menubar .wrap{position:relative;display:flex;align-items:center;height:56px}
 .menubar .mini{position:absolute;left:20px;top:50%;transform:translateY(-50%);opacity:0;pointer-events:none;transition:opacity .2s}
-.menubar .mini img{height:34px;width:auto}
+.menubar .mini img{height:28px;width:auto}
 .menubar.scrolled .mini{opacity:1;pointer-events:auto}
-@media(max-width:1100px){.menubar .mini{display:none}}
+@media(max-width:1240px){.menubar .mini{display:none}}
 .menubar nav{flex:1;min-width:0;display:flex;align-items:center;gap:4px;font-size:.92rem;font-weight:500;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .menubar nav::-webkit-scrollbar{display:none}
-.menubar nav a{flex:none;text-decoration:none;color:var(--ink-soft);padding:8px 14px;border-radius:999px}
+.menubar nav a{flex:none;text-decoration:none;color:var(--ink-soft);padding:8px 11px;border-radius:999px}
 .menubar nav a:first-child{margin-left:auto}
 .menubar nav a.btn{margin-right:auto;margin-left:8px;padding:8px 20px;color:#fff;font-size:.9rem}
 .menubar nav a:hover{color:var(--teal);background:#e9f1f2}
@@ -223,6 +232,22 @@ tr:last-child td{border-bottom:0}
 .contact{max-width:420px}
 .contact div{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:18px}
 .contact b{display:block;margin-bottom:4px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.features{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.features{grid-template-columns:1fr}}
+.fcard{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.fcard h3{font-size:1.05rem;margin-bottom:.4em}
+.fcard p{font-size:.92rem;color:var(--ink-soft);margin:0}
+.stack{display:grid;gap:22px;min-width:0}
+.gallery figure.big{grid-column:span 2}
+@media(max-width:560px){.gallery figure.big{grid-column:auto}}
+.pill.lite{color:#0f6a54;background:#d1fae5}
+.sha{margin-top:12px;font-size:.78rem;color:var(--muted)}
+.sha summary{cursor:pointer;font-weight:600;color:var(--ink-soft)}
+.sha code{display:block;margin-top:6px;padding:8px 10px;background:var(--cream);border:1px solid var(--line);border-radius:8px;word-break:break-all;font-size:.74rem;color:var(--ink)}
+.sha-help{font-size:.9rem;color:var(--ink-soft);margin-top:14px}
+.sha-help code{background:var(--sand);padding:2px 6px;border-radius:6px;font-size:.82rem}
+.frame .bar b em{font-style:normal;color:var(--teal);font-weight:700}
 footer{background:var(--ink);color:#cfe0e4;padding:40px 0;font-size:.88rem}
 footer a{color:#fff}
 footer .legal{max-width:60em;opacity:.85;margin-top:14px}
@@ -244,6 +269,7 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
   <div class="wrap">
     <a class="mini" href="#" aria-label="Back to top"><img src="assets/cheqprinter-logo.png?rev=5" alt="CheQPrinter"></a>
     <nav aria-label="Main">
+      <a href="#features">Features</a>
       <a href="#calibrator">Calibrator</a>
       <a href="#how">How it works</a>
       <a href="#editions">Editions</a>
@@ -263,11 +289,11 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     <div class="hero-text">
       <span class="eyebrow">Free cheque printing software &middot; Made in the UAE</span>
       <h1>Print on any bank's cheque.<span>Line it up once. Print every time.</span></h1>
-      <p class="lead">Measure your cheque, align it to your printer and print, in any currency. Free, runs in your browser, and your cheque data never leaves your computer.</p>
+      <p class="lead">Measure your cheque, align it to your printer and print, in any currency. Free, works fully offline in your browser, and your cheque data never leaves your computer.</p>
       <ul class="chips" aria-label="Highlights">
         <li>Any bank</li>
         <li>Any currency</li>
-        <li>No account</li>
+        <li>Works offline</li>
         <li>Data stays on your PC</li>
       </ul>
       <div class="cta-row">
@@ -279,25 +305,29 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
 
     <div class="stage" id="stage">
       <div class="frame">
-        <div class="bar"><i></i><i></i><i></i><b>CheQPrinter</b></div>
+        <div class="bar"><i></i><i></i><i></i><b id="frameTitle">CheQPrinter <em>Plus</em> &middot; Dashboard</b></div>
         <div class="slides">
-          <figure class="slide active" data-cap="Cheque Print &amp; Issue: pick a template, preview exactly what prints, then print. Plus is shown; Lite has the same preview and calibrator.">
-            <img src="assets/print-issue.jpg" alt="Cheque Print and Issue screen: choose a bank template, preview the cheque, set the crossing instruction and print">
+          <figure class="slide active" data-ed="Plus" data-name="Dashboard" data-cap="Plus dashboard: see outstanding cheques, past-due amounts, PDC maturities and the cash each bank account needs, month by month.">
+            <img src="assets/dashboard.png?rev=6" alt="CheQPrinter Plus dashboard showing outstanding cheques, past due amounts, cash needed by month and maturity buckets" width="1050" height="569">
           </figure>
-          <figure class="slide" data-cap="Cheque Register: Browse records by date, with monthly totals shown per currency.">
-            <img src="assets/cheque-register.png?rev=5" alt="CheQPrinter Plus cheque register showing monthly totals by currency and date">
+          <figure class="slide" data-ed="Lite &amp; Plus" data-name="Calibrator" data-cap="Calibrator (Lite shown, Plus has it too): drag each field into place over your cheque, with a live preview of exactly what prints.">
+            <img src="assets/lite-calibrate.jpg?rev=6" alt="CheQPrinter calibrator: drag and resize each field over the cheque with an alignment grid" width="1500" height="1008" loading="lazy">
           </figure>
-          <figure class="slide" data-cap="Plus dashboard: PDC maturity forecast and cash-flow, per currency. Plus only.">
-            <img src="assets/dashboard.png?rev=5" alt="CheQPrinter Plus dashboard showing outstanding cheques, past due amounts, cash needed by month and maturity buckets">
+          <figure class="slide" data-ed="Lite &amp; Plus" data-name="Print &amp; Issue" data-cap="Cheque print (Lite shown): type the payee and amount, the words are written for you, check the preview and print.">
+            <img src="assets/lite-print.jpg?rev=6" alt="CheQPrinter Lite cheque print screen with payee, amount, amount in words and a live cheque preview" width="1500" height="1008" loading="lazy">
+          </figure>
+          <figure class="slide" data-ed="Plus" data-name="Cheque Register" data-cap="Plus cheque register: browse records by date, with monthly totals shown per currency.">
+            <img src="assets/cheque-register.png?rev=6" alt="CheQPrinter Plus cheque register showing monthly totals by currency and date" width="1040" height="564" loading="lazy">
           </figure>
         </div>
       </div>
       <div class="tabs" role="tablist" aria-label="Preview screens">
+        <button class="tab" role="tab" aria-selected="true" type="button">Plus Dashboard</button>
+        <button class="tab" role="tab" aria-selected="false" type="button">Calibrator</button>
         <button class="tab" role="tab" aria-selected="false" type="button">Print &amp; Issue</button>
         <button class="tab" role="tab" aria-selected="false" type="button">Cheque Register</button>
-        <button class="tab" role="tab" aria-selected="true" type="button">Plus Dashboard</button>
       </div>
-      <p class="cap" id="heroCap" aria-live="polite">Plus dashboard: review outstanding cheques, PDC maturities and cash needed by month. Lite is focused on cheque printing and calibration.</p>
+      <p class="cap" id="heroCap" aria-live="polite">Plus dashboard: see outstanding cheques, past-due amounts, PDC maturities and the cash each bank account needs, month by month.</p>
     </div>
   </div>
 </section>
@@ -306,12 +336,31 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
   <div class="wrap">
     <ul>
       <li>Works with any bank's cheque</li>
-      <li>No account, no sign-up</li>
+      <li>Works fully offline, no account</li>
       <li>Cheque data stays on your computer</li>
       <li>Test sheet to check alignment</li>
     </ul>
   </div>
 </div>
+
+<!-- FEATURES -->
+<section class="block" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Everything you need to print a cheque properly</h2>
+      <p>Built around one idea: line your cheque up once, then print it right every time.</p>
+    </div>
+    <div class="features">
+      <article class="fcard"><h3>Calibrator for any bank</h3><p>Measure your own cheque and drag every field into place. More than 80 built-in layouts are only starting points; your calibrated template is what makes it exact.</p></article>
+      <article class="fcard"><h3>A profile for every printer</h3><p>Save the alignment for each printer you use and switch in one click: paper feed, tray and fine-tune offsets in 0.5 mm steps.</p></article>
+      <article class="fcard"><h3>Test sheet before real leaves</h3><p>Print rulers and crosshairs on plain paper, hold it against a real cheque, and fix any shift before you use a leaf.</p></article>
+      <article class="fcard"><h3>Any currency, words written for you</h3><p>Choose your country, use dozens of currencies or add your own. Amount in words is written in English or Arabic, or type your own.</p></article>
+      <article class="fcard"><h3>Fully offline and private</h3><p>Everything is inside one HTML file. No internet needed, no account, and your cheque data never leaves your computer.</p></article>
+      <article class="fcard"><h3>Safer printing</h3><p>The preview matches the print, you are warned before printing the same cheque twice, and backup and restore keep your templates and history safe.</p></article>
+    </div>
+    <p class="note">Need records, schedules and control for a business? <a href="#editions">Plus adds a cheque register, PDC dashboard, batch and installment cheques, and cheque book tracking.</a></p>
+  </div>
+</section>
 
 <!-- CALIBRATOR -->
 <section class="block" id="calibrator">
@@ -322,17 +371,23 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
       <ul class="checks">
         <li>Enter your cheque's size in millimetres, or upload a scan of it to line up against</li>
         <li>Drag and resize every field on the cheque, or type exact positions</li>
-        <li>Save a separate alignment profile for each printer</li>
+        <li>Save a separate alignment profile for each printer and switch between them in one click</li>
         <li>Fine-tune the print position in 0.5 mm steps and choose where the cheque sits on the A4 page</li>
-        <li>Print a ruler-and-crosshair test sheet on plain paper before using a real leaf</li>
+        <li>Print a ruler-and-crosshair test sheet on plain paper before using a real leaf, with or without sample text</li>
         <li>Save a template per bank, then export and share it with colleagues</li>
       </ul>
-      <p class="note">Built-in layouts, including named starting points for many UAE banks, are only starting points. Your calibrated template is what makes it exact.</p>
+      <p class="note">More than 80 built-in layouts, including named starting points for many UAE banks, are only starting points. Your calibrated template is what makes it exact.</p>
     </div>
-    <figure class="shot">
-      <img src="assets/printer-alignment.gif?rev=5" alt="Printer paper feeder and hardware alignment screen with A4 preview, feed orientation, paper source and fine-tune offsets" loading="lazy">
-      <figcaption>Printer alignment: A4 preview, feed orientation, paper source and fine-tune offsets.</figcaption>
-    </figure>
+    <div class="stack">
+      <figure class="shot">
+        <img src="assets/lite-calibrate.jpg?rev=6" alt="Calibrator with draggable fields and alignment grid over the cheque" width="1500" height="1008" loading="lazy">
+        <figcaption>Calibrator: drag and resize each field, with a live preview of the real text.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/lite-profiles.jpg?rev=6" alt="Printer alignment screen with saved printer profiles, A4 preview, feed orientation, paper source and fine-tune offsets" width="1300" height="1032" loading="lazy">
+        <figcaption>Printer alignment: one saved profile per printer, A4 preview, paper source and fine-tune offsets.</figcaption>
+      </figure>
+    </div>
   </div>
   <div class="wrap" style="margin-top:34px">
     <div class="callout">
@@ -353,12 +408,11 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
       <p>Set-up takes a few minutes the first time. After that, printing a cheque takes seconds.</p>
     </div>
     <ol class="steps">
-      <li><h3>Download and open</h3><p>Save the single HTML file, then open it with Chrome or Edge (right-click &rarr; Open with). Bookmark it for next time.</p></li>
+      <li><h3>Download and open</h3><p>Save the single HTML file, then open it with Chrome or Edge (right-click &rarr; Open with). No internet is needed after that. Bookmark it for next time.</p></li>
       <li><h3>Start from a layout</h3><p>Pick a built-in layout, then measure your own cheque with a ruler and enter its width and height.</p></li>
-      <li><h3>Calibrate once</h3><p>Print the test sheet on plain A4, hold it against a real cheque, and drag the fields until they line up. It is saved per bank.</p></li>
+      <li><h3>Calibrate once</h3><p>Print the test sheet on plain A4, hold it against a real cheque, and drag the fields until they line up. Save it per bank, and save your printer position as a profile.</p></li>
       <li><h3>Fill in and print</h3><p>Enter date, payee and amount. Words are written for you. Check the preview, then print on your cheque.</p></li>
     </ol>
-    <!-- TODO: embed a 60-90 second walkthrough video here (setup + first print) -->
   </div>
 </section>
 
@@ -375,18 +429,20 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
         <h3>Lite</h3>
         <p class="for">For anyone who writes cheques and wants them to print straight the first time.</p>
         <ul>
-          <li>Calibrator for any bank's cheque, with built-in starting layouts</li>
-          <li>Printer alignment and test sheet</li>
+          <li>Calibrator for any bank's cheque, with more than 80 built-in starting layouts</li>
+          <li>Printer alignment with a saved profile for each printer, plus a test sheet</li>
           <li>Country and currency setup, with dozens of currencies or add your own</li>
           <li>Amount in words in English or Arabic</li>
-          <li>Beneficiary list and print history</li>
-          <li>Template import / export and backup / restore</li>
+          <li>Beneficiary list and unlimited print history</li>
+          <li>Warning before you print the same cheque twice</li>
+          <li>Works fully offline, with template import / export and backup / restore</li>
         </ul>
-        <a class="btn btn-primary" href="downloads/cheqprinter-lite.html" download>Download Lite &darr;</a>
+        <a class="btn btn-primary" href="downloads/cheqprinter-lite.html" download data-dl="lite" data-loc="edition_card">Download Lite &darr;</a>
         <div class="download-meta">
-          <p class="meta">Single HTML app file</p>
+          <p class="meta">Single HTML file &middot; 1.4 MB</p>
           <p class="meta">Updated: 11 Nov 2026</p>
         </div>
+        <details class="sha"><summary>Check your download (SHA-256)</summary><code>c7de1c3a1082371ed981e0507bcc5133a4e2c88c24e6f8320ddeb2b431b8655e</code></details>
       </article>
       <article class="card">
         <span class="tag">PLUS &middot; FREE</span>
@@ -403,16 +459,19 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
           <li>Invoice payment ledger and per-cheque transaction history</li>
           <li>Payment vouchers, remittance advice, Excel / CSV import and PDF reports</li>
           <li>Signature or company-seal stamp, transaction and voucher remarks</li>
+          <li>Checks before printing for duplicate payments, stale dates and invoices</li>
           <li>Optional PIN lock, auto-lock and recovery code</li>
         </ul>
-        <a class="btn btn-ghost" href="downloads/cheqprinter-plus.html" download>Download Plus &darr;</a>
+        <a class="btn btn-ghost" href="downloads/cheqprinter-plus.html" download data-dl="plus" data-loc="edition_card">Download Plus &darr;</a>
         <div class="download-meta">
-          <p class="meta">Single HTML app file</p>
+          <p class="meta">Single HTML file &middot; 2.9 MB</p>
           <p class="meta">Updated: 11 Nov 2026</p>
         </div>
+        <details class="sha"><summary>Check your download (SHA-256)</summary><code>5ffc925a2f5c1cd7939dc03613b6e6773674ca692fc4998233199aa6a6deee4c</code></details>
       </article>
     </div>
     
+    <p class="sha-help"><b>Verify a download:</b> on Windows run <code>certutil -hashfile cheqprinter-lite.html SHA256</code>, on Mac or Linux run <code>shasum -a 256 cheqprinter-lite.html</code>, and compare it with the value above. If they match, the file is exactly the one published here.</p>
     <p class="note"><b>Why is it free?</b> CheQPrinter is a passion project, built because printing cheques should not be a struggle. There are no plans to sell it, and both editions are free to use. If that ever changes, we will say so here first.</p>
 
     <h3 style="margin-top:44px">Lite vs Plus at a glance</h3>
@@ -423,11 +482,14 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
           <tr><td>Cheque writing, preview and printing</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Calibrator and custom templates for any bank</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Printer alignment and test sheet</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Saved alignment profile for each printer</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Works fully offline</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Country and currency setup, custom currencies</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Amount in words (English or Arabic)</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Beneficiaries</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-          <tr><td>Print history</td><td>Last 50 cheques</td><td>Full register</td></tr>
-          <tr><td>Backup and restore</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Print history</td><td>Unlimited, kept in your browser</td><td>Full register</td></tr>
+          <tr><td>Backup and restore, with a storage-usage check</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+          <tr><td>Warning before printing a duplicate</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Multiple companies and bank accounts</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Cheque register, logs and activity history</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
           <tr><td>Batch cheques and installment schedules</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
@@ -450,29 +512,41 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
   <div class="wrap">
     <div class="sec-head">
       <h2>See it in action</h2>
-      <p>Real screens from the application, with sample data only. Click a picture to see it full size.</p>
+      <p>Real screens from the apps, with sample data only. Plus-only screens are marked in amber. Click a picture to see it full size.</p>
     </div>
     <div class="gallery">
+      <figure class="big">
+        <a class="thumb" href="assets/dashboard.png?rev=6" target="_blank" rel="noopener"><img src="assets/dashboard.png?rev=6" alt="Plus dashboard with PDC maturity forecast and cash needed by month" loading="lazy"></a>
+        <span class="pill plus">Plus</span>
+        <h3>PDC dashboard</h3>
+        <p>See what is outstanding, what falls due and how much cash each bank account needs, per currency.</p>
+      </figure>
       <figure>
-        <a class="thumb" href="assets/print-issue.jpg" target="_blank" rel="noopener"><img src="assets/print-issue.jpg" alt="Cheque Print and Issue screen with template selection, cheque preview and print buttons" loading="lazy"></a>
-        <span class="pill plus">Plus shown</span>
-        <h3>Cheque Print &amp; Issue</h3>
-        <p>Pick a template, preview exactly what prints, then print. Lite has the same preview and calibrator.</p>
+        <a class="thumb" href="assets/lite-calibrate.jpg?rev=6" target="_blank" rel="noopener"><img src="assets/lite-calibrate.jpg?rev=6" alt="Calibrator with draggable fields over the cheque" loading="lazy"></a>
+        <span class="pill ">Lite &amp; Plus</span>
+        <h3>Calibrator</h3>
+        <p>Drag and resize each field until it sits exactly on your cheque. Lite shown.</p>
+      </figure>
+      <figure>
+        <a class="thumb" href="assets/lite-print.jpg?rev=6" target="_blank" rel="noopener"><img src="assets/lite-print.jpg?rev=6" alt="Cheque print screen with payee, amount in words and live preview" loading="lazy"></a>
+        <span class="pill ">Lite &amp; Plus</span>
+        <h3>Cheque print</h3>
+        <p>Fill in the cheque, check the preview, then print. Lite shown.</p>
+      </figure>
+      <figure>
+        <a class="thumb" href="assets/lite-profiles.jpg?rev=6" target="_blank" rel="noopener"><img src="assets/lite-profiles.jpg?rev=6" alt="Printer alignment screen with saved printer profiles" loading="lazy"></a>
+        <span class="pill ">Lite &amp; Plus</span>
+        <h3>Printer profiles</h3>
+        <p>A saved alignment for every printer: paper source, orientation and fine-tune offsets.</p>
       </figure>
       <figure>
         <a class="thumb" href="assets/test-sheet.png?rev=5" target="_blank" rel="noopener"><img src="assets/test-sheet.png?rev=5" alt="Calibration test sheet with ruler and crosshair marks over the cheque fields" loading="lazy"></a>
-        <span class="pill">Lite &amp; Plus</span>
+        <span class="pill ">Lite &amp; Plus</span>
         <h3>Calibration test sheet</h3>
         <p>Rulers and red crosshairs show exactly where each field will print.</p>
       </figure>
       <figure>
-        <a class="thumb" href="assets/dashboard.png?rev=5" target="_blank" rel="noopener"><img src="assets/dashboard.png?rev=5" alt="Plus dashboard with PDC maturity forecast and cash needed by month" loading="lazy"></a>
-        <span class="pill plus">Plus</span>
-        <h3>PDC dashboard</h3>
-        <p>See what is outstanding, what falls due and how much cash each bank account needs.</p>
-      </figure>
-      <figure>
-        <a class="thumb" href="assets/cheque-register.png?rev=5" target="_blank" rel="noopener"><img src="assets/cheque-register.png?rev=5" alt="Plus cheque register calendar with monthly totals in several currencies" loading="lazy"></a>
+        <a class="thumb" href="assets/cheque-register.png?rev=6" target="_blank" rel="noopener"><img src="assets/cheque-register.png?rev=6" alt="Plus cheque register calendar with monthly totals in several currencies" loading="lazy"></a>
         <span class="pill plus">Plus</span>
         <h3>Cheque register</h3>
         <p>Browse records by date, with monthly totals shown per currency.</p>
@@ -498,25 +572,33 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
   <div class="wrap two">
     <div>
       <h2>Your data stays on your computer</h2>
-      <p>There is no account and no cloud. Templates, beneficiaries and history are stored inside your browser on this computer; cheque data is not uploaded. Plus offers an optional PIN lock and auto-lock to help prevent casual access. The PIN does not encrypt saved data or backup files, so protect access to your computer and backups. You are responsible for keeping regular backups.</p>
+      <p>There is no account and no cloud. Templates, beneficiaries and history are stored inside your browser on this computer; cheque data is not uploaded. Plus offers an optional PIN lock and auto-lock to help prevent casual access. The PIN does not encrypt saved data or backup files, so protect access to your computer and backups. You are responsible for keeping regular backups. This website uses Google Analytics to count visits and downloads; the apps themselves send nothing to anyone.</p>
       <ul class="checks">
+        <li>Works fully offline: no internet is needed once the file is downloaded</li>
         <li>Use the same browser and open the same file location each time</li>
         <li>Clearing browser data erases your cheque data</li>
         <li>Download a backup file regularly and keep a copy off this PC</li>
+        <li>Backup / Restore shows how much browser storage you have used, and the app warns you before it fills up</li>
         <li>Backups made in Lite can be restored in Plus</li>
         <li>The Plus PIN lock does not encrypt saved data or backup files</li>
       </ul>
     </div>
-    <div class="callout">
-      <div class="ic" aria-hidden="true">&#128190;</div>
-      <div>
-        <h3>Updating or moving to a new PC?</h3>
-        <ol>
-          <li>In your current app, open <b>Backup / Restore</b> and download a backup.</li>
-          <li>Download the updated app file and open it in the same browser.</li>
-          <li>Open <b>Backup / Restore</b>, choose <b>Merge</b>, and select your backup file.</li>
-        </ol>
+    <div class="stack">
+      <div class="callout">
+        <div class="ic" aria-hidden="true">&#128190;</div>
+        <div>
+          <h3>Updating or moving to a new PC?</h3>
+          <ol>
+            <li>In your current app, open <b>Backup / Restore</b> and download a backup.</li>
+            <li>Download the updated app file and open it in the same browser.</li>
+            <li>Open <b>Backup / Restore</b>, choose <b>Merge</b>, and select your backup file.</li>
+          </ol>
+        </div>
       </div>
+      <figure class="shot" style="max-width:420px">
+        <img src="assets/lite-backup.jpg?rev=6" alt="Backup and Restore window showing data on this computer and browser storage used" width="800" height="990" loading="lazy">
+        <figcaption>Backup &amp; Restore (Lite shown): your data counts and how much browser storage is used.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -531,10 +613,13 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     <details><summary>Does it work on Mac, or only Windows?</summary><div class="ans">It is a single HTML file that runs in a modern browser, so it works on Windows, macOS and Linux. Chrome or Edge are recommended for printing.</div></details>
     <details><summary>Is my cheque data uploaded anywhere?</summary><div class="ans">No. There is no account and cheque data is not sent to any server. Everything is stored in your browser on your computer, which is why regular backups matter.</div></details>
     <details><summary>Does the Plus PIN lock encrypt my data?</summary><div class="ans">No. The optional PIN lock helps prevent casual use of the app interface, but it does not encrypt saved data or backup files. Protect access to your computer and keep backups secure.</div></details>
-    <details><summary>Do I need an internet connection?</summary><div class="ans">CheQPrinter is an offline-first app: no account, no cloud, and your cheque data is never sent anywhere. Right now the page styling and icons are fetched from the internet when the file opens, so do the first open (and any update) while online. A fully self-contained build is on our list.<!-- If Lite/Plus are verified to work with the internet disconnected, replace the second sentence with: "It works fully offline once downloaded." --></div></details>
-    <details><summary>Which printers work?</summary><div class="ans">CheQPrinter is made for ordinary A4 desktop printers (inkjet or laser). A cheque is a small, stiff leaf, so use the manual or bypass slot if your printer has one, and always test on plain paper first. <b>Large photocopiers and A3 machines are not recommended:</b> in our own test, a cheque got stuck in the rollers of a big copier. Results depend on your printer's paper feed, which is exactly what the alignment tools are for.</div></details>
+    <details><summary>Do I need an internet connection?</summary><div class="ans">Only to download the file. After that, Lite and Plus work fully offline: all styling, icons and fonts are inside the file, and your cheque data is never sent anywhere. You can open it with the internet disconnected.</div></details>
+    <details><summary>Can I save settings for more than one printer?</summary><div class="ans">Yes. In Printer Settings, give the alignment a name (for example "Office HP LaserJet") and save it as a profile. Add one for every printer you use and load any of them in one click. Profiles are included in your backup.</div></details>
+    <details><summary>How many cheques does Lite remember?</summary><div class="ans">There is no fixed limit. Print history is kept in your browser, which allows roughly 5 MB per site; cheque records are tiny, so that is many thousands of entries. Backup / Restore shows how much space you have used and the app warns you before it fills up. Scanned cheque images take the most space.</div></details>
+    <details><summary>How do I know my download is genuine?</summary><div class="ans">Each download has a SHA-256 checksum on this page. On Windows run <code>certutil -hashfile cheqprinter-lite.html SHA256</code>; on Mac or Linux run <code>shasum -a 256 cheqprinter-lite.html</code>. If the result matches the published value, the file is exactly the one we published.</div></details>
+    <details><summary>Which printers work?</summary><div class="ans">CheQPrinter is made for ordinary A4 desktop printers (inkjet or laser). A cheque is a small, stiff leaf, so use the manual or bypass slot if your printer has one, and always test on plain paper first. Save each printer as its own alignment profile. <b>Large photocopiers and A3 machines are not recommended:</b> in our own test, a cheque got stuck in the rollers of a big copier. Results depend on your printer's paper feed, which is exactly what the alignment tools are for.</div></details>
     <details><summary>Will my bank accept a printed cheque?</summary><div class="ans">Banks set their own rules on printed cheques, ink and layout. Check with your bank, and test on plain paper before using a real leaf.</div></details>
-    <details><summary>What is the difference between Lite and Plus?</summary><div class="ans">Lite provides cheque writing, printing, calibration, beneficiary management and backup / restore. Plus adds multiple companies and bank accounts, a full register and activity history, batch and installment schedules, a PDC maturity dashboard, cheque book and leaf controls, voucher and invoice tracking, print confirmations, signature or seal stamps, and optional PIN lock with auto-lock.</div></details>
+    <details><summary>What is the difference between Lite and Plus?</summary><div class="ans">Lite provides cheque writing, printing, calibration, printer profiles, beneficiary management, unlimited print history and backup / restore, and works fully offline. Plus does all of that and adds multiple companies and bank accounts, a full register and activity history, batch and installment schedules, a PDC maturity dashboard, cheque book and leaf controls, voucher and invoice tracking, print confirmations, signature or seal stamps, and optional PIN lock with auto-lock.</div></details>
   </div>
 </section>
 
@@ -560,8 +645,8 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     <img src="assets/cheqprinter-logo.png?rev=5" alt="CheQPrinter" style="height:44px;width:auto;filter:brightness(0) invert(1);margin-bottom:12px">
     <div>&copy; 2026 CheQPrinter &middot; Made in the UAE &middot; <a href="https://www.cheqprinter.com">www.cheqprinter.com</a> &middot; <a href="#">Back to top &uarr;</a></div>
     <div>Contact: <a href="mailto:cheq@cheqprinter.com">cheq@cheqprinter.com</a></div>
-    <div>Downloads: <a href="downloads/cheqprinter-lite.html" download>Lite</a> &middot; <a href="downloads/cheqprinter-plus.html" download>Plus</a></div>
-    <!-- TODO: add SHA-256 checksums for each download here -->
+    <div>Downloads: <a href="downloads/cheqprinter-lite.html" download data-dl="lite" data-loc="footer">Lite</a> &middot; <a href="downloads/cheqprinter-plus.html" download data-dl="plus" data-loc="footer">Plus</a></div>
+    <div>SHA-256 checksums are shown under each download in the <a href="#editions">Editions</a> section.</div>
     <p class="legal">CheQPrinter is provided as-is. You are responsible for verifying every printed cheque before use. Bank names, where shown, are used only to identify cheque layouts and belong to their owners; CheQPrinter is not affiliated with or endorsed by any bank.</p>
   </div>
 </footer>
@@ -606,6 +691,8 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     slides.forEach(function(s,k){ s.classList.toggle('active', k===n); });
     tabs.forEach(function(t,k){ t.setAttribute('aria-selected', k===n ? 'true':'false'); });
     cap.textContent=slides[n].getAttribute('data-cap');
+    var ft=document.getElementById('frameTitle');
+    if(ft) ft.innerHTML='CheQPrinter <em>'+slides[n].getAttribute('data-ed')+'</em> &middot; '+slides[n].getAttribute('data-name');
   }
   function start(){
     if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -620,6 +707,14 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
   stage.addEventListener('focusout', function(){ paused=false; });
   start();
 })();
+
+/* 3) Count downloads in Google Analytics (GA4 does not track .html downloads automatically) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest ? e.target.closest('a[data-dl]') : null;
+  if(!a || typeof gtag!=='function') return;
+  var ed=a.getAttribute('data-dl');
+  gtag('event','download_'+ed,{edition:ed,file_name:(a.getAttribute('href')||'').split('/').pop(),link_location:a.getAttribute('data-loc')||'page'});
+});
 </script>
 </body>
 </html>
