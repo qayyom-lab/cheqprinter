@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W925D2QX6T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W925D2QX6T');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printer Alignment and Test Sheet Guide for Cheque Printing | CheQPrinter</title>
+<meta name="description" content="Learn how to read the CheQPrinter test sheet, fix printer offsets in 0.5 mm steps, and save a separate alignment profile for each printer.">
+<link rel="canonical" href="https://www.cheqprinter.com/guides/printer-alignment-test-sheet/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#fffdf8">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.cheqprinter.com/guides/printer-alignment-test-sheet/">
+<meta property="og:title" content="Printer Alignment and Test Sheet Guide for Cheque Printing | CheQPrinter">
+<meta property="og:description" content="Learn how to read the CheQPrinter test sheet, fix printer offsets in 0.5 mm steps, and save a separate alignment profile for each printer.">
+<meta property="og:image" content="https://www.cheqprinter.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/guides.css?rev=1">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cheqprinter.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.cheqprinter.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Alignment and test sheet", "item": "https://www.cheqprinter.com/guides/printer-alignment-test-sheet/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Printer alignment and the test sheet", "description": "Learn how to read the CheQPrinter test sheet, fix printer offsets in 0.5 mm steps, and save a separate alignment profile for each printer.", "dateModified": "2026-11-11", "datePublished": "2026-11-11", "mainEntityOfPage": "https://www.cheqprinter.com/guides/printer-alignment-test-sheet/", "author": {"@type": "Organization", "name": "CheQPrinter"}, "publisher": {"@type": "Organization", "name": "CheQPrinter", "logo": {"@type": "ImageObject", "url": "https://www.cheqprinter.com/assets/cheqprinter-logo.png"}}}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="brandbar">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="CheQPrinter home"><img src="../../assets/cheqprinter-logo.png?rev=5" alt="CheQPrinter - Print. Track. Control."></a>
+    <a class="mail" href="mailto:cheq@cheqprinter.com">cheq@cheqprinter.com</a>
+  </div>
+</div>
+<header class="menubar" id="menubar">
+  <div class="wrap">
+    <a class="mini" href="../../" aria-label="CheQPrinter home"><img src="../../assets/cheqprinter-logo.png?rev=5" alt="CheQPrinter"></a>
+    <nav aria-label="Main">
+      <a href="../../">Home</a>
+      <a href="../../#features">Features</a>
+      <a href="../../#editions">Editions</a>
+      <a href="../../guides/" class="active">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#contact">Contact</a>
+      <a class="btn btn-primary" href="../../#editions">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <div class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> &rsaquo; <a href="../">Guides</a> &rsaquo; Alignment and test sheet</div>
+  <div class="ghead">
+    <h1>Printer alignment and the test sheet</h1>
+    <p class="lead">Read the test sheet, decide whether the printer or the template needs fixing, and save an alignment profile for every printer you use.</p>
+  </div>
+  <div class="article">
+    <p>A printed cheque is only useful if every word lands in its box. Two things decide that: <b>where the field sits on your cheque</b> (the template) and <b>where your printer actually puts the paper</b> (the printer position). CheQPrinter keeps them separate so you can fix each one on its own.</p>
+    <figure class="vid"><video controls preload="none" playsinline poster="../../assets/video/printer-profile-poster.jpg"><source src="../../assets/video/printer-profile.mp4" type="video/mp4">Your browser cannot play this video. The steps are written out below.</video><figcaption>Printer Settings in 45 seconds: where the cheque sits on A4, paper source, 0.5 mm fine-tune, and saving a profile per printer.</figcaption></figure><h2>Read the test sheet</h2>
+      <figure class="shot small"><img src="../../assets/guides/test-sheet.jpg" alt="Calibration test sheet with rulers, red crosses and a scale bar" loading="lazy"><figcaption>Click <b>Print Test Sheet</b>. Tick &quot;with sample text&quot; to also print example text next to each cross.</figcaption></figure>
+    <ul>
+      <li><b>Rulers</b> along the top and left edges are in millimetres, so you can measure positions directly.</li>
+      <li><b>Red crosses</b> mark where each field will start. Each is labelled with its name and X / Y position in mm.</li>
+      <li><b>The 100 mm bar</b> proves the print is at true size. Measure it with a ruler. If it is not 100 mm, the browser is scaling the page: set the scale to 100% / Actual size and print again.</li>
+      <li><b>Sample text</b> (optional) shows how real text will sit against each cross.</li>
+    </ul>
+<h2>Work out what needs fixing</h2>
+    <figure class="shot small" style="background:#fff"><svg viewBox="0 0 640 330" role="img" aria-label="Diagram: a printed test sheet laid over a real cheque. A red cross is 3 mm to the right of where the text should start, so the horizontal offset is minus 3 millimetres." style="width:100%;height:auto;display:block">
+      <rect x="20" y="30" width="470" height="250" rx="6" fill="#f3eee4" stroke="#bfb28f" stroke-width="2"/>
+      <text x="34" y="52" font-size="12" fill="#8a7d5a" font-family="Arial">Your real cheque</text>
+      <line x1="60" y1="150" x2="330" y2="150" stroke="#9aa9ae" stroke-dasharray="4 4"/>
+      <text x="60" y="144" font-size="11" fill="#5f7a82" font-family="Arial">PAY</text>
+      <rect x="95" y="96" width="468" height="228" fill="none" stroke="#0f5a6b" stroke-width="2" stroke-dasharray="7 5" opacity=".0"/>
+      <g opacity=".92"><rect x="140" y="70" width="440" height="230" rx="4" fill="#fff" fill-opacity=".55" stroke="#0d3b47" stroke-width="2"/>
+      <text x="152" y="92" font-size="12" fill="#0d3b47" font-family="Arial" font-weight="700">Printed test sheet (held over the cheque)</text>
+      <g stroke="#0d3b47" stroke-width="1">
+        <line x1="140" y1="70" x2="140" y2="82"/><line x1="160" y1="70" x2="160" y2="78"/><line x1="180" y1="70" x2="180" y2="82"/><line x1="200" y1="70" x2="200" y2="78"/><line x1="220" y1="70" x2="220" y2="82"/>
+      </g></g>
+      <line x1="82" y1="150" x2="82" y2="150" stroke="#000"/>
+      <g stroke="#d62828" stroke-width="3"><line x1="170" y1="150" x2="206" y2="150"/><line x1="188" y1="132" x2="188" y2="168"/></g>
+      <text x="212" y="130" font-size="12" fill="#d62828" font-family="Arial" font-weight="700">red cross = where this field will print</text>
+      <g stroke="#0f6a54" stroke-width="2" fill="none"><line x1="104" y1="205" x2="188" y2="205"/><line x1="104" y1="197" x2="104" y2="213"/><line x1="188" y1="197" x2="188" y2="213"/></g>
+      <path d="M104 150 L104 200" stroke="#0f6a54" stroke-dasharray="3 3"/>
+      <text x="108" y="228" font-size="13" fill="#0f6a54" font-family="Arial" font-weight="700">measure this gap with a ruler</text>
+      <text x="108" y="246" font-size="12" fill="#0f6a54" font-family="Arial">(here 3 mm too far right)</text>
+      <rect x="505" y="96" width="120" height="152" rx="10" fill="#e9f4ef" stroke="#b7dccb"/>
+      <text x="515" y="120" font-size="12" font-family="Arial" fill="#0d3b47" font-weight="700">Then in the app</text>
+      <text x="515" y="142" font-size="11.5" font-family="Arial" fill="#0d3b47">Printer Settings</text>
+      <text x="515" y="158" font-size="11.5" font-family="Arial" fill="#0d3b47">Horizontal:</text>
+      <text x="515" y="180" font-size="20" font-family="Arial" fill="#0f6a54" font-weight="700">-3.0 mm</text>
+      <text x="515" y="204" font-size="11" font-family="Arial" fill="#5f7a82">(use the - button</text>
+      <text x="515" y="218" font-size="11" font-family="Arial" fill="#5f7a82">six times: 0.5 mm</text>
+      <text x="515" y="232" font-size="11" font-family="Arial" fill="#5f7a82">per click)</text>
+    </svg><figcaption>Illustration: lay the printed test sheet over a real cheque and measure how far each red cross is from where the text should start.</figcaption></figure>
+
+    <div class="tbl tablewrap"><table>
+      <thead><tr><th>What you see</th><th>What it means</th><th>Where to fix it</th></tr></thead>
+      <tbody>
+        <tr><td>Every cross is off by the same amount, in the same direction</td><td>Your printer feeds the paper slightly differently</td><td><b>Printer Settings</b>: Horizontal / Vertical fine-tune, 0.5 mm per click</td></tr>
+        <tr><td>Only some fields are off</td><td>That field sits in the wrong place on your cheque</td><td><b>Calibrate</b>: drag the field, then <b>Save Template</b></td></tr>
+        <tr><td>Everything looks too small or too large; the 100 mm bar is not 100 mm</td><td>The browser is scaling the page</td><td>Print dialog: scale <b>100% / Actual size</b>, not Fit to page</td></tr>
+        <tr><td>Text is cut off near an edge</td><td>Most printers cannot print right to the edge</td><td>Move the cheque on the A4 page (top, centre or bottom edge) or shift fields inward</td></tr>
+      </tbody>
+    </table></div>
+<h2>Printer Settings explained</h2>
+      <figure class="shot"><img src="../../assets/guides/printer-settings.jpg" alt="Printer Paper Feeder and Hardware Alignment window with numbered controls" loading="lazy"><figcaption>1: where the cheque sits on A4 &nbsp; 2: paper source &nbsp; 3: fine-tune in 0.5 mm steps &nbsp; 4: save as a named profile.</figcaption></figure>
+    <ul>
+      <li><b>Cheque position on A4 page:</b> top edge, centre or bottom edge. Choose the one that matches how your printer pulls a cheque through.</li>
+      <li><b>Feed orientation and paper source:</b> landscape or portrait insertion, and the tray or manual / bypass slot you use. A single cheque usually goes through the manual slot.</li>
+      <li><b>Fine-tune print position:</b> moves all printed fields together. Each click is 0.5 mm. Use the sliders for large moves and the + / - buttons for small ones.</li>
+      <li><b>Print scanned cheque background:</b> for plain-paper tests only. It prints your scan under the text so you can check alignment without wasting a real leaf.</li>
+    </ul>
+    <h2>One profile for each printer</h2>
+    <p>Different printers shift paper differently. Type a name such as <i>Office HP LaserJet</i> and press <b>Save profile</b>. Add one per printer, then choose the right one from the list before printing. Saving again under the same name updates that profile. Profiles are included in your backup, and a backup from Lite can be restored in Plus.</p>
+    <div class="tip"><b>Good habit:</b> after you finish calibrating, print one more test on plain paper, hold it against a real cheque once more, and only then use a real leaf.</div>
+    <div class="callout" style="margin-top:30px"><div class="ic" aria-hidden="true">&#9888;</div><div><h3>Always test before using real cheque leaves</h3><p>Print on plain paper first and hold it against a real cheque. Banks set their own rules on printed cheques, so confirm with your bank. CheQPrinter is not affiliated with any bank.</p></div></div>
+    <h2>What next?</h2>
+    <div class="next"><a class="btn btn-primary" href="../printer-problems/">Fix printer and paper problems</a><a class="btn btn-ghost" href="../first-print/">Print your first cheque</a><a class="btn btn-ghost" href="../lite-vs-plus/">Lite or Plus?</a></div>
+
+  </div>
+</div>
+<div style="height:50px"></div>
+</main>
+<footer>
+  <div class="wrap">
+    <img src="../../assets/cheqprinter-logo.png?rev=5" alt="CheQPrinter" style="height:44px;width:auto;filter:brightness(0) invert(1);margin-bottom:12px">
+    <div>&copy; 2026 CheQPrinter &middot; Made in the UAE &middot; <a href="https://www.cheqprinter.com">www.cheqprinter.com</a> &middot; <a href="#">Back to top &uarr;</a></div>
+    <div>Guides: <a href="../../guides/first-print/">First print</a> &middot; <a href="../../guides/printer-alignment-test-sheet/">Alignment &amp; test sheet</a> &middot; <a href="../../guides/lite-vs-plus/">Lite vs Plus</a> &middot; <a href="../../guides/printer-problems/">Printer problems</a></div>
+    <div>Downloads: <a href="../../downloads/cheqprinter-lite.html" download data-dl="lite" data-loc="guide_footer">Lite</a> &middot; <a href="../../downloads/cheqprinter-plus.html" download data-dl="plus" data-loc="guide_footer">Plus</a> &middot; Contact: <a href="mailto:cheq@cheqprinter.com">cheq@cheqprinter.com</a></div>
+    <p class="legal">CheQPrinter is provided as-is. You are responsible for verifying every printed cheque before use. Bank names, where shown, are used only to identify cheque layouts and belong to their owners; CheQPrinter is not affiliated with or endorsed by any bank. This website uses Google Analytics to count visits and downloads; the apps themselves send nothing to anyone.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var bar=document.getElementById('menubar'), brand=document.querySelector('.brandbar');
+  function u(){ var y=window.pageYOffset||document.documentElement.scrollTop; bar.classList.toggle('scrolled', y>brand.offsetHeight-4); }
+  window.addEventListener('scroll',u,{passive:true}); u();
+})();
+document.addEventListener('click',function(e){
+  var a=e.target.closest ? e.target.closest('a[data-dl]') : null;
+  if(!a || typeof gtag!=='function') return;
+  var ed=a.getAttribute('data-dl');
+  gtag('event','download_'+ed,{edition:ed,file_name:(a.getAttribute('href')||'').split('/').pop(),link_location:a.getAttribute('data-loc')||'page'});
+});
+</script>
+</body>
+</html>

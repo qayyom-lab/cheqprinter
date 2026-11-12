@@ -57,7 +57,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "Is CheQPrinter free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Lite and Plus are both free, and we plan to keep them that way. In the future we may offer a separate advanced edition, for example a desktop version, for a fee; it would be optional and would not replace or limit these free editions." } },
     { "@type": "Question", "name": "Does it work with my bank's cheque?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calibrator lets you measure your own cheque and position every printed field exactly where it belongs, so it works with any bank's cheque. Built-in layouts are only starting points." } },
-    { "@type": "Question", "name": "Can I use it outside the UAE?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calibrator works with any cheque anywhere. You choose your country and default currency at setup, dozens of currencies are included, you can add a custom currency, and amount in words is written in English or Arabic. You can also type your own words in any language." } },
+    { "@type": "Question", "name": "Can I use it outside the UAE?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The calibrator works with any cheque anywhere. You choose your country and default currency in the app, dozens of currencies are included, you can add a custom currency, and amount in words is written in English or Arabic. You can also type your own words in any language." } },
     { "@type": "Question", "name": "Does it work on Mac or only Windows?", "acceptedAnswer": { "@type": "Answer", "text": "CheQPrinter is a single HTML file that runs in a modern browser such as Chrome or Edge, so it works on Windows, macOS and Linux." } },
     { "@type": "Question", "name": "Is my cheque data uploaded anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account and no cheque data is sent to a server. Records are stored in your browser on your computer." } },
     { "@type": "Question", "name": "Do I need an internet connection?", "acceptedAnswer": { "@type": "Answer", "text": "No. Once you have downloaded the file, Lite and Plus work fully offline. All styling, icons and fonts are inside the file, and your cheque data is never sent anywhere." } },
@@ -239,6 +239,14 @@ tr:last-child td{border-bottom:0}
 .fcard h3{font-size:1.05rem;margin-bottom:.4em}
 .fcard p{font-size:.92rem;color:var(--ink-soft);margin:0}
 .stack{display:grid;gap:22px;min-width:0}
+.gcards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:960px){.gcards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.gcards{grid-template-columns:1fr}}
+.gcard{display:block;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .12s}
+.gcard:hover{transform:translateY(-2px);border-color:var(--teal)}
+.gcard h3{margin:.2em 0 .3em;font-size:1.08rem;color:var(--teal)}
+.gcard p{margin:0;color:var(--ink-soft);font-size:.92rem}
+.gcard .time{font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 .gallery figure.big{grid-column:span 2}
 @media(max-width:560px){.gallery figure.big{grid-column:auto}}
 .pill.lite{color:#0f6a54;background:#d1fae5}
@@ -274,8 +282,8 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     <nav aria-label="Main">
       <a href="#features">Features</a>
       <a href="#calibrator">Calibrator</a>
-      <a href="#how">How it works</a>
       <a href="#editions">Editions</a>
+      <a href="guides/">Guides</a>
       <a href="#screens">Screens</a>
       <a href="#safety">Your data</a>
       <a href="#faq">FAQ</a>
@@ -408,7 +416,7 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
   <div class="wrap">
     <div class="sec-head">
       <h2>From download to first cheque in four steps</h2>
-      <p>Set-up takes a few minutes the first time. After that, printing a cheque takes seconds.</p>
+      <p>Set-up takes a few minutes the first time. After that, printing a cheque takes seconds. <a href="guides/first-print/">Read the full step-by-step guide with screenshots and video.</a></p>
     </div>
     <ol class="steps">
       <li><h3>Download and open</h3><p>Save the single HTML file, then open it with Chrome or Edge (right-click &rarr; Open with). No internet is needed after that. Bookmark it for next time.</p></li>
@@ -416,6 +424,22 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
       <li><h3>Calibrate once</h3><p>Print the test sheet on plain A4, hold it against a real cheque, and drag the fields until they line up. Save it per bank, and save your printer position as a profile.</p></li>
       <li><h3>Fill in and print</h3><p>Enter date, payee and amount. Words are written for you. Check the preview, then print on your cheque.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section class="block" id="guides">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Guides: set up, align and print with confidence</h2>
+      <p>Short step-by-step guides with real screenshots and a captioned video. The built-in layouts are only starting points, so these show you how to calibrate your own cheque and printer.</p>
+    </div>
+    <div class="gcards">
+      <a class="gcard" href="guides/first-print/"><span class="time">Start here</span><h3>Print your first cheque</h3><p>Download, choose a template, print the test sheet, calibrate and print.</p></a>
+      <a class="gcard" href="guides/printer-alignment-test-sheet/"><span class="time">Alignment</span><h3>Printer alignment and test sheet</h3><p>Read the test sheet, fix shifts in 0.5 mm steps, save a profile per printer.</p></a>
+      <a class="gcard" href="guides/lite-vs-plus/"><span class="time">Compare</span><h3>Lite or Plus?</h3><p>Both free and offline. See which fits, and how to move from one to the other.</p></a>
+      <a class="gcard" href="guides/printer-problems/"><span class="time">Troubleshooting</span><h3>Printer and paper problems</h3><p>Shifted text, wrong scale, jams and lost data: symptoms and fixes.</p></a>
+    </div>
   </div>
 </section>
 
@@ -615,7 +639,7 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     <div class="sec-head"><h2>Frequently asked questions</h2></div>
     <details><summary>Is CheQPrinter really free?</summary><div class="ans">Yes. Lite and Plus are both free, and we plan to keep them that way. CheQPrinter is a passion project. In the future we may offer a separate advanced edition, for example a desktop version, for a fee; it would be optional and would not replace or limit these free editions.</div></details>
     <details><summary>Does it work with my bank's cheque?</summary><div class="ans">Yes. The calibrator lets you measure your own cheque and position every printed field exactly where it belongs, so it is not limited to any list of banks. Built-in layouts, including named starting points for many UAE banks, are only starting points: calibrate once with the test sheet and the app remembers it. Bank names are used for identification only.</div></details>
-    <details><summary>Can I use it outside the UAE?</summary><div class="ans">Yes. The calibrator works with any cheque, anywhere. At first start you choose your country and default currency. AED, SAR, USD, EUR, GBP, PKR and INR are pinned at the top, dozens more are included, and decimals follow the currency. Can't find yours? Add a custom currency with your own symbol or code. Amount in words is written in English or Arabic, and you can always type your own words in any language using Edit Words.</div></details>
+    <details><summary>Can I use it outside the UAE?</summary><div class="ans">Yes. The calibrator works with any cheque, anywhere. In Backup / Restore, open Manage currencies &amp; defaults to choose your country and default currency. AED, SAR, USD, EUR, GBP, PKR and INR are pinned at the top, dozens more are included, and decimals follow the currency. Can't find yours? Add a custom currency with your own symbol or code. Amount in words is written in English or Arabic, and you can always type your own words in any language using Edit Words.</div></details>
     <details><summary>Does it work on Mac, or only Windows?</summary><div class="ans">It is a single HTML file that runs in a modern browser, so it works on Windows, macOS and Linux. Chrome or Edge are recommended for printing.</div></details>
     <details><summary>Is my cheque data uploaded anywhere?</summary><div class="ans">No. There is no account and cheque data is not sent to any server. Everything is stored in your browser on your computer, which is why regular backups matter.</div></details>
     <details><summary>Does the Plus PIN lock encrypt my data?</summary><div class="ans">No. The optional PIN lock helps prevent casual use of the app interface, but it does not encrypt saved data or backup files. Protect access to your computer and keep backups secure.</div></details>
@@ -652,6 +676,7 @@ footer .legal{max-width:60em;opacity:.85;margin-top:14px}
     <div>&copy; 2026 CheQPrinter &middot; Made in the UAE &middot; <a href="https://www.cheqprinter.com">www.cheqprinter.com</a> &middot; <a href="#">Back to top &uarr;</a></div>
     <div>Contact: <a href="mailto:cheq@cheqprinter.com">cheq@cheqprinter.com</a></div>
     <div>Downloads: <a href="downloads/cheqprinter-lite.html" download data-dl="lite" data-loc="footer">Lite</a> &middot; <a href="downloads/cheqprinter-plus.html" download data-dl="plus" data-loc="footer">Plus</a></div>
+    <div>Guides: <a href="guides/first-print/">First print</a> &middot; <a href="guides/printer-alignment-test-sheet/">Alignment &amp; test sheet</a> &middot; <a href="guides/lite-vs-plus/">Lite vs Plus</a> &middot; <a href="guides/printer-problems/">Printer problems</a></div>
     <div>SHA-256 checksums for both downloads are listed in the <a href="#editions">Editions</a> section.</div>
     <p class="legal">CheQPrinter is provided as-is. You are responsible for verifying every printed cheque before use. Bank names, where shown, are used only to identify cheque layouts and belong to their owners; CheQPrinter is not affiliated with or endorsed by any bank.</p>
   </div>
