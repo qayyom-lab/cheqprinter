@@ -1,6 +1,20 @@
+# CheQPrinter - Search engine and AI crawler permissions
+# Website: https://www.cheqprinter.com/
+
+# OpenAI ChatGPT Search discovery
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /downloads/
+
+# OpenAI model-training crawler (optional; enabled)
+User-agent: GPTBot
+Allow: /
+Disallow: /downloads/
+
+# General search engines and other crawlers
 User-agent: *
 Allow: /
-# Keep the downloadable app files out of search results (they are still downloadable from the page)
+# Keep downloadable application files out of crawler access
 Disallow: /downloads/
 
 Sitemap: https://www.cheqprinter.com/sitemap.xml
