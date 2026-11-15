@@ -7,9 +7,7 @@ Allow: /
 # Keep downloadable application files out of crawler access
 Disallow: /downloads/
 
-Sitemap: https://www.cheqprinter.com/sitemap.xml
-
-# AI training / scraping crawlers
+# AI training / scraping crawlers (blocked)
 User-agent: GPTBot
 Disallow: /
 
@@ -22,11 +20,16 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
-User-agent: PerplexityBot
-Disallow: /
-
 User-agent: Bytespider
 Disallow: /
 
+# AI search and answer crawlers (allowed, except downloads)
 User-agent: OAI-SearchBot
-Disallow: /
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+Disallow: /downloads/
+
+Sitemap: https://www.cheqprinter.com/sitemap.xml
