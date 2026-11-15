@@ -28,9 +28,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/guides.css?rev=1">
+<link rel="stylesheet" href="../../assets/guides.css?rev=2">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cheqprinter.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.cheqprinter.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Printer problems", "item": "https://www.cheqprinter.com/guides/printer-problems/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Printer and paper problems", "description": "Fix common cheque printing problems: shifted text, wrong scale, jams in the rollers, cut-off edges and lost data. Practical fixes for CheQPrinter users.", "dateModified": "2026-11-11", "datePublished": "2026-11-11", "mainEntityOfPage": "https://www.cheqprinter.com/guides/printer-problems/", "author": {"@type": "Organization", "name": "CheQPrinter"}, "publisher": {"@type": "Organization", "name": "CheQPrinter", "logo": {"@type": "ImageObject", "url": "https://www.cheqprinter.com/assets/cheqprinter-logo.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Printer and paper problems", "description": "Fix common cheque printing problems: shifted text, wrong scale, jams in the rollers, cut-off edges and lost data. Practical fixes for CheQPrinter users.", "dateModified": "2026-11-15", "datePublished": "2026-11-15", "mainEntityOfPage": "https://www.cheqprinter.com/guides/printer-problems/", "author": {"@type": "Organization", "name": "CheQPrinter"}, "publisher": {"@type": "Organization", "name": "CheQPrinter", "logo": {"@type": "ImageObject", "url": "https://www.cheqprinter.com/assets/cheqprinter-logo.png"}}}</script>
 
 </head>
 <body>
@@ -66,23 +66,32 @@
     <p>Most printing problems come from a handful of causes: scaling, paper feed and margins. Find your symptom below. Always test on plain paper first, and use the <a href="../printer-alignment-test-sheet/">test sheet</a> to see exactly what is happening.</p>
     <h2>Text is in the wrong place</h2>
     <h3>Everything is shifted by the same amount</h3>
-    <p>That is the printer, not the template. Print the test sheet, measure the gap between a red cross and where the text should start, and enter it in <b>Printer Settings</b> using the Horizontal and Vertical buttons (0.5 mm per click). Save it as a profile for that printer.</p>
+    <p>That is the printer, not the template. Print the test sheet, measure the gap between a red cross and where the text should start, and enter it in <b>Printer Setup</b> using the Horizontal and Vertical buttons (0.5 mm per click). Save it as a profile for that printer.</p>
     <h3>Only one or two fields are off</h3>
     <p>Open <b>Calibrate</b>, drag those fields into place and press <b>Save Template</b>.</p>
     <h3>Everything is too small, too large or drifts across the page</h3>
     <p>The browser is scaling the page. In the print window set the scale to <b>100% / Actual size</b>, not &quot;Fit to page&quot;. Check that the 100 mm bar on the test sheet measures exactly 100 mm.</p>
     <h3>Text is cut off at an edge</h3>
-    <p>Most printers cannot print right to the paper edge. In Printer Settings, change <b>Cheque position on A4 page</b> (top, centre or bottom edge), or move the field inwards in Calibrate.</p>
+    <p>Most printers cannot print right to the paper edge. In Printer Setup, choose another cheque position picture (top, centre or bottom edge), or move the field inwards in Calibrate.</p>
     <h2>Paper and feeding</h2>
     <h3>The cheque jams or gets stuck</h3>
     <p>A cheque is a small, stiff leaf. Use the printer's <b>manual or bypass slot</b> if it has one, feed it straight, and try a test on a cut piece of paper the same size first. <b>Large photocopiers and A3 machines are not recommended.</b> In our own test, a cheque got stuck inside the rollers of a big copier.</p>
     <h3>The cheque goes in crooked</h3>
-    <p>Adjust the paper guides to the cheque width. Try the other <b>Feed orientation</b> (landscape or portrait) and the other paper source in Printer Settings, then re-run the test sheet.</p>
+    <p>Adjust the paper guides to the cheque width. Try the other <b>Feed orientation</b> (landscape or portrait) and the other paper source in Printer Setup, then re-run the test sheet.</p>
     <h3>Printing differs between two printers</h3>
     <p>That is normal. Save a separate <b>profile for each printer</b> and choose the right one before printing.</p>
+    <h2>Scans and calibration</h2>
+    <h3>The scan is tilted or does not fill the cheque</h3>
+    <p>Open <b>Calibrate</b> and press <b>Re-crop</b>. Use <b>Zoom</b> and drag so the cheque edges meet the frame, and use <b>Fine rotation</b> to straighten it. Scan flat at about 300 dpi so all four edges are in the picture.</p>
+    <h3>It says &quot;Leaf size changed&quot;</h3>
+    <p>You changed the cheque width or height after uploading the scan. Press <b>Re-crop</b> so the scan is fitted to the new size.</p>
+    <h3>It says &quot;Save or discard template changes before printing&quot;</h3>
+    <p>You edited the template and have not saved it. Press <b>Save Template</b> to keep the changes, or <b>Discard</b> to go back. Printing is blocked until you choose, so you never print from a half-edited layout.</p>
+    <h3>The scan will not upload</h3>
+    <p>Use a PNG or JPG picture of the cheque. Very large images are refused to protect browser storage; scan at about 300 dpi rather than the highest setting.</p>
     <h2>The app</h2>
     <h3>The print window does not open</h3>
-    <p>Use Chrome or Edge, and check that the browser is not blocking printing. The app will say <i>The print dialog could not be opened</i> if the browser refuses.</p>
+    <p>Use Chrome or Edge, and check that the browser is not blocking printing. The app will say <i>The print dialog could not be opened</i> if the browser refuses. After printing, a window asks whether the cheque printed correctly: choose <b>Print again</b> if it jammed.</p>
     <h3>The amount in words does not fit</h3>
     <p>The app warns you before printing when the words are too long for the line. Widen the field in Calibrate, reduce the font size, or edit the words (they are your responsibility once edited, so check carefully).</p>
     <h3>My templates or history disappeared</h3>
@@ -90,7 +99,7 @@
     <h3>The app says storage is nearly full</h3>
     <p>Browsers allow about 5 MB per site. Scanned cheque images take the most space. Download a backup, then remove scans you no longer need (Calibrate &rarr; <i>Remove scan from this template</i>).</p>
     <h3>It says this looks like a duplicate</h3>
-    <p>You already printed the same amount, payee and date within 24 hours. Press <b>Cancel</b> if it was a mistake, or <b>OK</b> if you really need another copy.</p>
+    <p>You already printed the same amount, payee and date within 24 hours. Cancel if it was a mistake, or choose to print again if you really need another copy.</p>
     <h2>Still stuck?</h2>
     <p>Email <a href="mailto:cheq@cheqprinter.com">cheq@cheqprinter.com</a> and tell us which printer you use and what you see. We will do our best to help.</p>
     <div class="callout" style="margin-top:30px"><div class="ic" aria-hidden="true">&#9888;</div><div><h3>Always test before using real cheque leaves</h3><p>Print on plain paper first and hold it against a real cheque. Banks set their own rules on printed cheques, so confirm with your bank. CheQPrinter is not affiliated with any bank.</p></div></div>
