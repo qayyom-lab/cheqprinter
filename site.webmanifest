@@ -1,6 +1,6 @@
 {
-  "name": "CheQPrinter",
-  "short_name": "CheQPrinter",
+  "name": "CheQ Printer",
+  "short_name": "CheQ Printer",
   "description": "Free cheque printing software with a built-in calibrator.",
   "start_url": "/",
   "display": "browser",
